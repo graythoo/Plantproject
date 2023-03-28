@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡內部</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        .table-rwd tbody tr td a {
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:768px) {
+            .table-rwd thead {
+                display: none;
+                
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                border: 2px solid var(--myblack);
+                margin-top: 15px;
+                /* background-color: var(--gray01); */
+                border-radius: 10px 10px 10px 10px;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+                font-size: 15px;
+            }
+
+            .table-rwd tbody tr td:before {
+                content: attr(data-th)":";
+                color: var(--mycolor15);
+                display: block;
+                float: left;
+                text-align: right;
+                width: 15%;
+                font-weight: bolder;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl" style="background-color: var(--mycolor04);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand fs-3 fw-700 text-white" href="#">管理員管理系統</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-700 fs-5" href="#" id="main" style="color:var(--mycolor14)">回到首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 active" href="#" id="memberinfo">會員資料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="memberdata">數據分析</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="plantlist">會員種植資料</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-5 disabled" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            合作對象
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="mise">合作店家</a></li>
+                            <li><a class="dropdown-item" href="#" id="expert">合作專家</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="employee">聯絡內部</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <span><i class="fa-solid fa-circle mt-2 me-1"
+                            style="color: var(--light_leaf);transform:scale(0.6,0.6);" id="premission"></i></span>
+                    <span class="fw-700 fs-3 me-4 text-end" id="login_member" style="color:var(--mycolor21)"></span>
+                    <button class="btn btn-light" id="logout_btn">登出</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <div class="card-header text-center fs-3 fw-500 text-bg-secondary">聯絡內部</div>
+                    <div class="card-body" id="mycontent">
+                        <table class="table table-bordered table-striped table-hover table-rwd">
+                            <thead>
+                                <tr class="text-center table-light">
+                                    <th>名字</th>
+                                    <th>職稱</th>
+                                    <th>帳號</th>
+                                    <th>分機號碼</th>
+                                    <th>電子信箱</th>
+                                </tr>
+                            </thead>
+                            <tbody id="member">
+                                <tr class="text-center">
+                                    <td data-th="名字">皮卡丘</td>
+                                    <td data-th="職稱">董事長</td>
+                                    <td data-th="帳號">owner01</td>
+                                    <td data-th="分機號碼">#001</td>
+                                    <td data-th="電子信箱">zzz@ccc.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/Su_check_member_state.js"></script>
+    <script src="js/control_username_plus.js"></script>
+    <script>
+
+        $(function () {
+            //確認UID登入
+            check_member_stste();
+            //加上帳號名
+            control_username_plus();
+
+            $.ajax({
+                type:"GET",
+                url:"plant_mem_R_api.php",
+                dataType:"json",
+                async:false,
+                success:showdata_R,
+                error:function(){
+                    console.log("error-plant_mem_R_api.php");
+                }
+            })
+        });
+       
+        function showdata_R(data){
+            console.log(data);
+            if(data.state){
+                $("#member").empty();
+                data.data.forEach(function (item) {
+                    console.log(item.Name+item.Role+item.Username);
+                   
+                    var strHTML = '<tr class="text-center" id="member"><td data-th="名字">'+item.Name+'</td><td data-th="職稱">'+item.Role+'</td><td data-th="帳號">'+item.Username+'</td><td data-th="分機號碼">'+item.Ext+'</td><td data-th="電子信箱">'+item.Email+'</td></tr>';
+                    $("#member").append(strHTML);
+                });
+            }else{
+                alert(data.message);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

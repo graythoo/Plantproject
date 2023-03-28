@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員中心</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/plant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--member_bgc);
+        }
+
+        @media screen and (max-width:768px) {
+            .d-flex {
+                flex-direction: column;
+            }
+
+            .save_btn,
+            .cancel_btn {
+                width: 100%;
+                font-size: 17px;
+            }
+
+            .footer {
+                height: 70vh;
+            }
+
+            .footer p {
+                text-align: center;
+            }
+
+            .footer i {
+                line-height: 70px;
+            }
+
+            .footer a {
+                display: block;
+                line-height: 60px;
+                text-align: center;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fulid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark" style="background-color: var(--social);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-seedling" style="color:var(--seed)"></i>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="plant.SPA.html">首頁</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">關於我們</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#s09" id="learning">課程教學</a></li>
+                                <li><a class="dropdown-item" href="#s05">我們的理念</a></li>
+                                <li><a class="dropdown-item" href="#s08">聯絡我們</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--leaf)" id="dropdown">
+                                記錄您的植物
+                            </a>
+                            <ul class="dropdown-menu" id="dropdown_menu">
+                                <li>
+                                    <a class="dropdown-item fs-5 text-primary  wow animate__pulse"
+                                        data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"
+                                        target="_blank" href="#" id="link_control">會員中心</a>
+                                    <a class="dropdown-item fs-5 text-primary  wow animate__pulse"
+                                    data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"
+                                    target="_blank" href="#" id="main" style="display: none;">會員中心</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a target="_blank" class="dropdown-item fw-700" href="#"
+                                        id="link_control01">新增植物</a></li>
+                                <li><a target="_blank" class="dropdown-item fw-700" href="#"
+                                        id="link_control02">我的植物</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                        id="link_control03">新增日記</a></li>
+                                <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                        id="link_control04">種植日記</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                        id="link_control05">種植小知識</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--home_font)"
+                                id="memberonly">會員專屬功能</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item text-success" href="#" style="display: none;"
+                                        target="_blank" id="link">後臺管理</a></li>
+                                <li>
+                                <li><a class="dropdown-item" href="#" id="maskmap" target="_blank">口罩地圖</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" target="_blank" style="display: none;"
+                                        id="restaurantmap">餐飲資料地圖</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" target="_blank"
+                                    id="todolist">代辦事項</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <span><i class="fa-solid fa-circle mt-2 me-1"
+                                style="color: var(--light_leaf);transform:scale(0.6,0.6);" id="premission"></i></span>
+                        <span class="fw-700 fs-3 me-4" id="login_member"></span>
+                        <button class="btn btn-light" id="logout_btn">登出</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="content" id="mycontent" style="margin-top: 5%;">
+                <div class="fs-2 fw-700" id="user_center">會員中心</div>
+                <div class="card mt-3">
+                    <div class="card-body border border-dark rounded p-5" style="background-color: var(--mcc);"
+                        id="memer_info">
+                        <div class="d-flex p-1">
+                            <div class="fw-3 fw-700 text-start p-3" id="username">您的帳號: 000000</div>
+                            <button class="btn btn-outline-success h-50 mt-3 ms-2" id="username_btn">修改</button>
+                        </div>
+                        <div class="d-flex p-1">
+                            <div class="fw-3 fw-700 text-start p-3" id="gender">您的性別: 男性</div>
+                            <button class="btn btn-outline-success h-50 mt-3 ms-2" id="gender_btn">修改</button>
+                        </div>
+                        <div class="d-flex p-1">
+                            <div class="fw-3 fw-700 text-start p-3" id="city">您所居住的城市: 台中市</div>
+                            <button class="btn btn-outline-success h-50 mt-3 ms-2" id="city_btn">修改</button>
+                        </div>
+                        <div class="d-flex p-1">
+                            <div class="fw-3 fw-700 text-start p-3" id="tel">您的電話號碼: 0900000000</div>
+                            <button class="btn btn-outline-success h-50 mt-3 ms-2" id="tel_btn">修改</button>
+                        </div>
+                        <div class="d-flex p-1">
+                            <div class="fw-3 fw-700 text-start p-3" id="email">您的電子郵件: 000@ccc.com</div>
+                            <button class="btn btn-outline-success h-50 mt-3 ms-2" id="email_btn">修改</button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="save_btn mb-3 me-3" data-bs-toggle="modal" data-bs-target="#memberModal"
+                                id="update_btn">修改會員密碼</a>
+                            <a href="#" class="cancel_btn mb-3" id="delete_btn">刪除帳號</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 修改會員資料Modal -->
+        <div class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h1 class="modal-title fs-5 text-white" id="memberModalLabel">修改會員資料</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="m_username" class="form-label d-none">帳號</label>
+                                <input type="text" id="m_username" name="m_username" class="form-control d-none"
+                                    placeholder="為4~12個字">
+                                <div class="valid-feedback" id="m_valid-feedback">帳號輸入正確!</div>
+                                <div class="invalid-feedback" id="m_invalid-feedback">帳號輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="m_password" class="form-label">修改密碼</label>
+                                <input type="password" id="m_password" name="m_password" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="form-text" id="err_password"></div>
+                                <div class="valid-feedback">密碼輸入正確!</div>
+                                <div class="invalid-feedback">密碼輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="m_re_password" class="form-label">確認密碼</label>
+                                <input type="password" id="m_re_password" name="m_re_password" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="form-text" id="err_re_password"></div>
+                                <div class="valid-feedback">密碼輸入一致</div>
+                                <div class="invalid-feedback">密碼輸入不一致</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-outline-primary" id="modal_update_btn">確認修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="position: relative;margin-top: 5%;">
+            <div class="px-5">
+                <span><a href="#" style="color:var(--home_font)" class="pe-md-4">HOME</a></span>
+                <span><a href="#s05" class="pe-md-4">About Us</a></span>
+                <span><a href="#s08" class="pe-md-4">Contact</a></span>
+                <span><a href="#s07" class="pe-md-4">FAQs</a></span>
+                <span><a href="https://zh-tw.facebook.com/" target="_blank" class="pe-md-2"><i
+                            class="fa-brands fa-facebook" style="color: var(--home_font) ;"></i></a></span>
+                <span> <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"
+                            style="color: var(--home_font) ;"></i></a></span>
+            </div>
+            <div>
+                <p class="me-5" style="position:absolute;right: 0;bottom: 0;">Copyright © 2023 雲端班_3號 版權所有</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/plant_check_member_state.js"></script>
+    <script src="js/username_plus.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/CityCountyData.js"></script>
+    <script>
+        var u_id;
+        var username;
+        var newusername = ''; // 定義全域變數
+        var flag_password = false;
+        var flag_repassword = false;
+        $(function () {
+            //確認登入狀態
+            check_member_state();
+
+            //帳號渲染
+            username_plus();
+
+            //取得網址參數
+            var urlParams = new URLSearchParams(window.location.search);
+            username = urlParams.get('username');
+
+            //管理者會員中心
+            var mySLink = document.getElementById('main');
+            mySLink.href = 'control_member.html?username=' + username;
+
+            //渲染畫面(要有帳號、性別、城市、電話、電子郵件) 
+            var jsonData = {};
+            jsonData["ID"] = u_id;
+            jsonData["username"] = username;
+            jsonData["gender"] = $("#gender").val();
+            jsonData["city"] = $("#city").val();
+            jsonData["tel"] = $("#tel").val();
+            jsonData["email"] = $("#email").val();
+
+            $.ajax({
+                type: "POST",
+                url: "Su_mem_select_one_api.php",
+                dataType: "json",
+                data: JSON.stringify(jsonData),
+                async: false,
+                success: showdata_select_one,
+                error: function () {
+                    alert("error-Su_mem_select_one_api.php");
+                }
+            });
+
+            //監聽更新按鈕 #update_btn
+            $("#update_btn").bind("click", function () {
+                console.log($(this).data("id"));
+                //將data-* 參數 帶入modal畫面
+                u_id = $(this).data("id");
+            });
+
+            //username的sweetalert更新
+            $("#username_btn").bind("click", function () {
+                Swal.fire({
+                    title: '修改您的帳號',
+                    input: 'text',
+                    inputValue: username,
+                    inputAttributes: {
+                        autocapitalize: 'off'
+                    },
+                    showCancelButton: true,
+                    cancelButtonText: '取消',
+                    confirmButtonText: '修改',
+                    showLoaderOnConfirm: true,
+                    //驗證訊息提醒
+                    inputValidator: (value) => {
+                        return new Promise((resolve) => {
+                            var jsonData = {};
+                            jsonData["username"] = value;
+                            $.ajax({
+                                type: "POST",
+                                url: "Su_mem_reg_check_one_api.php",
+                                data: JSON.stringify(jsonData),
+                                dataType: "json",
+                                success: function (data) {
+                                    if (data.state) {
+                                        // 帳號不存在
+                                        resolve();
+                                    } else {
+                                        // 帳號已存在，顯示警告訊息
+                                        resolve('帳號已存在');
+                                    }
+                                },
+                                error: function () {
+                                    alert("error-Su_mem_reg_check_one_api.php");
+                                }
+                            });
+                        });
+                    },
+                    preConfirm: (newusernameValue) => {
+                        return new Promise((resolve, reject) => {
+                            if (newusernameValue === username) {
+                                resolve();
+                            } else {
+                                u_id = $(this).data("id");
+                                var jsonData = {};
+                                jsonData["id"] = u_id;
+                                jsonData["username"] = username;
+                                jsonData["newusername"] = newusernameValue;
+                                console.log(JSON.stringify(jsonData));
+                                $.ajax({
+                                    type: "POST",
+                                    url: "user_username_U_api.php",
+                                    dataType: "json",
+                                    data: JSON.stringify(jsonData),
+                                    async: false,
+                                    success: function () {
+                                        // 設置全域變數的值(這個全域變數＝這個新帳號名)
+                                        newusername = newusernameValue; 
+                                        resolve();
+                                    },
+                                    error: function () {
+                                        console.log("error-user_username_U_api.php");
+                                        reject();
+                                    }
+                                });
+                            }
+                        });
+                    },
+                    allowOutsideClick: () => !Swal.isLoading()
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: '已修改',
+                            icon:'success',
+                        })
+                    };
+                    setTimeout(function(){
+                        // 根據newusername是否等於原本的username來導向不同的頁面
+                        if (newusername != '') {
+                            location.href = 'member.html?username=' + newusername;
+                        } else {
+                            location.href = 'member.html?username=' + username;
+                        }
+                    }, 2000); // 延遲 2 秒后跳轉到原頁面
+                })
+            });
+
+            //gender的sweetalert更新
+            $("#gender_btn").bind("click", function () {
+                // console.log($(this).data("gender"));
+                gender = $(this).data("gender");
+                Swal.fire({
+                    title: '修改您的性別',
+                    input: 'select',
+                    inputValue: gender,
+                    inputOptions: {
+                        '男性': '男性',
+                        '女性': '女性',
+                    },
+                    inputPlaceholder: '--請選擇性別--',
+                    showCancelButton: true,
+                    cancelButtonText: '取消',
+                    confirmButtonText: '修改',
+                    showLoaderOnConfirm: true,
+                    preConfirm: (newgender) => {
+                        return new Promise((resolve, reject) => {
+                            u_id = $(this).data("id");
+                            var jsonData = {};
+                            jsonData["id"] = u_id;
+                            jsonData["gender"] = newgender;
+                            console.log(JSON.stringify(jsonData));
+                            $.ajax({
+                                type: "POST",
+                                url: "user_gender_U_api.php",
+                                dataType: "json",
+                                data: JSON.stringify(jsonData),
+                                async: false,
+                                success: function () {
+                                    resolve();
+                                },
+                                error: function () {
+                                    console.log("error-user_gender_U_api.php");
+                                }
+                            });
+                        });
+                    },
+                    allowOutsideClick: () => !Swal.isLoading()
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            Swal.fire({
+                                title: '已修改',
+                                icon:'success',
+                            });
+                        };
+                        setTimeout(function(){
+                            location.href = 'member.html?username='+username;
+                        }, 2000); // 延遲 2 秒后跳轉到原頁面
+                    });
+                });
+            //city的sweetalert更新
+            $("#city_btn").bind("click", function () {
+
+                // 將城市資料轉換成選項的格式
+                var cityOptions = {};//宣告為陣列
+                city.forEach(function (item) {
+                    cityOptions[item.CityName] = item.CityName;
+                });
+                Swal.fire({
+                    title: '修改您的居住城市',
+                    input: 'select',
+                    inputOptions: cityOptions,
+                    inputPlaceholder: '--請選擇居住城市--',
+                    showCancelButton: true,
+                    cancelButtonText: '取消',
+                    confirmButtonText: '修改',
+                    showLoaderOnConfirm: true,
+                    preConfirm: (newcity) => {
+                        return new Promise((resolve, reject) => {
+                            u_id = $(this).data("id");
+                            var jsonData = {};
+                            jsonData["id"] = u_id;
+                            jsonData["city"] = newcity;
+                            console.log(JSON.stringify(jsonData));
+                            $.ajax({
+                                type: "POST",
+                                url: "user_city_U_api.php",
+                                dataType: "json",
+                                data: JSON.stringify(jsonData),
+                                async: false,
+                                success: function () {
+                                    resolve();
+                                },
+                                error: function () {
+                                    console.log("error-user_city_U_api.php");
+                                }
+                            });
+                        });
+                    },
+                    allowOutsideClick: () => !Swal.isLoading()
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: '已修改',
+                            icon:'success',
+                        })
+                    };
+                    setTimeout(function(){
+                        location.href = 'member.html?username='+username;
+                    }, 2000); // 延遲 2 秒后跳轉到原頁面
+                })
+            });
+
+            //tel的sweetalert更新
+            $("#tel_btn").bind("click", function () {
+                tel = $(this).data("tel");
+                Swal.fire({
+                    title: '修改您的電話號碼',
+                    input: 'text',
+                    inputValue: tel,
+                    inputAttributes: {
+                        maxlength: 10,//輸入最大長度
+                    },
+                    inputPlaceholder: '限制為10個字',
+                    showCancelButton: true,
+                    cancelButtonText: '取消',
+                    confirmButtonText: '修改',
+                    showLoaderOnConfirm: true,
+                    inputValidator: (value) => {
+                        if (value.length < 10) {
+                            return '字數小於10個字';
+                        }
+                    },
+                    preConfirm: (newtel) => {
+                        return new Promise((resolve, reject) => {
+                            u_id = $(this).data("id");
+                            var jsonData = {};
+                            jsonData["id"] = u_id;
+                            jsonData["tel"] = newtel;
+                            console.log(JSON.stringify(jsonData));
+                            $.ajax({
+                                type: "POST",
+                                url: "user_tel_U_api.php",
+                                dataType: "json",
+                                data: JSON.stringify(jsonData),
+                                async: false,
+                                success: function () {
+                                    resolve(); 
+                                },
+                                error: function () {
+                                    console.log("error-user_tel_U_api.php");
+                                }
+                            });
+                        });
+                    },
+                    allowOutsideClick: () => !Swal.isLoading()
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: '已修改',
+                            icon:'success',
+                        });
+                        setTimeout(function(){
+                            location.href = 'member.html?username='+username;
+                        }, 2000); // 延遲 2 秒后跳轉到原頁面
+                    }
+                })
+            });
+
+            //email的sweetalert更新
+            $("#email_btn").bind("click", function () {
+                email = $(this).data("email");
+                Swal.fire({
+                    title: '修改您的Email',
+                    input: 'text',
+                    inputValue: email,
+                    inputAttributes: {
+                        maxlength: 20,
+                    },
+                    inputPlaceholder: '限制為6~20個字',
+                    showCancelButton: true,
+                    cancelButtonText: '取消',
+                    confirmButtonText: '修改',
+                    showLoaderOnConfirm: true,
+                    inputValidator: (value) => {
+                        if (value.length < 6) {
+                            return '字數小於6個字';
+                        }
+                    },
+                    preConfirm: (newemail) => {
+                        return new Promise((resolve, reject) => {
+                            u_id = $(this).data("id");
+                            var jsonData = {};
+                            jsonData["id"] = u_id;
+                            jsonData["email"] = newemail;
+                            console.log(JSON.stringify(jsonData));
+                            $.ajax({
+                                type: "POST",
+                                url: "user_email_U_api.php",
+                                dataType: "json",
+                                data: JSON.stringify(jsonData),
+                                async: false,
+                                success: function () {
+                                    resolve();
+                                },
+                                error: function () {
+                                    console.log("error-user_email_U_api.php");
+                                }
+                            });
+                        });
+                    },
+                    allowOutsideClick: () => !Swal.isLoading()
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: '已修改',
+                            icon:'success',
+                        })
+                    };
+                    setTimeout(function(){
+                        location.href = 'member.html?username='+username;
+                    }, 2000); // 延遲 2 秒后跳轉到原頁面
+                })
+            });
+
+            //監聽modale更新按鈕 #modal_update_btn
+            $("#modal_update_btn").bind("click", function () {
+                console.log("test");
+                var jsonData = {};
+                jsonData["id"] = u_id;
+                jsonData["password"] = $("#m_password").val();
+                console.log(JSON.stringify(jsonData));
+                $.ajax({
+                    type: "POST",
+                    url: "user_password_U_api.php",
+                    dataType: "json",
+                    data: JSON.stringify(jsonData),
+                    async: false,
+                    success: showdata_passwordUpdate,
+                    error: function () {
+                        console.log("error-user_password_U_api.php");
+                    }
+                });
+            });
+
+
+            //使用者密碼即時監聽
+            $("#m_password").bind("input propertychange", function () {
+                if ($(this).val().length > 3 && $(this).val().length < 13) {
+                    $("#m_password").removeClass("is-invalid");
+                    $("#m_password").addClass("is-valid");
+                    flag_password = true;
+                } else {
+                    $("#m_password").removeClass("is-valid");
+                    $("#m_password").addClass("is-invalid");
+                    flag_password = false;
+                }
+            });
+
+            //使用者確認密碼即時監聽
+            $("#m_re_password").bind("input propertychange", function () {
+                console.log("test");
+                //假如相等才是確認一致
+                if ($(this).val() == $("#m_password").val()) {
+                    //密碼確認一致
+                    $("#m_re_password").removeClass("is-invalid");
+                    $("#m_re_password").addClass("is-valid");
+                    flag_repassword = true;
+                } else {
+                    //密碼確認不一致
+                    $("#m_re_password").removeClass("is-valid");
+                    $("#m_re_password").addClass("is-invalid");
+                    flag_repassword = false;
+                }
+            });
+
+            //監聽table 刪除按鈕 #delete_btn
+            $("#mycontent #delete_btn").bind("click", function () {
+                if (confirm("確認是否刪除帳號?")) {
+                    console.log($(this).data("id"));
+                    var jsonData = {};
+                    jsonData["id"] = $(this).data("id");
+                    jsonData["username"] = $(this).data("username");
+                    console.log(JSON.stringify(jsonData));
+                    $.ajax({
+                        type: "POST",
+                        url: "Su_mem_D_api.php",
+                        dataType: "json",
+                        data: JSON.stringify(jsonData),
+                        async: false,
+                        success: showdata_delete,
+                        error: function () {
+                            alert("error-Su_mem_D_api.php");
+                        }
+                    });
+                }
+            });
+        });
+
+        function showdata_select_one(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+
+                $("#memer_info").empty();
+
+                var strHTML = '<div class="d-flex p-1"><div class="fw-3 fw-700 text-start p-3" id="username">您的帳號: ' + data.data.Username + '</div><button class="btn btn-outline-success h-50 mt-3 ms-2" data-id="' + data.data.ID + '" data-username="' + data.data.Username + '" id="username_btn">修改</button></div><div class="d-flex p-1"><div class="fw-3 fw-700 text-start p-3" id="gender">您的性別: ' + data.data.Gender + '</div><button class="btn btn-outline-success h-50 mt-3 ms-2" data-id="' + data.data.ID + '" data-gender="' + data.data.Gender + '" id="gender_btn">修改</button></div><div class="d-flex p-1"><div class="fw-3 fw-700 text-start p-3" id="city">您所居住的城市: ' + data.data.City + '</div><button class="btn btn-outline-success h-50 mt-3 ms-2" data-id="' + data.data.ID + '" data-city="' + data.data.City + '" id="city_btn">修改</button></div><div class="d-flex p-1"><div class="fw-3 fw-700 text-start p-3" id="tel">您的電話號碼: ' + data.data.Tel + '</div><button class="btn btn-outline-success h-50 mt-3 ms-2"  data-id="' + data.data.ID + '" data-tel="' + data.data.Tel + '" id="tel_btn">修改</button></div><div class="d-flex p-1"><div class="fw-3 fw-700 text-start p-3" id="email">您的電子郵件: ' + data.data.Email + '</div><button class="btn btn-outline-success h-50 mt-3 ms-2"  data-id="' + data.data.ID + '" data-email="' + data.data.Email + '" id="email_btn">修改</button></div><div class="d-flex justify-content-center"><a href="#" class="save_btn mb-3 me-3" data-bs-toggle="modal" id="update_btn" data-bs-target="#memberModal" data-id="' + data.data.ID + '">修改會員密碼</a><a href="#" class="cancel_btn mb-3" data-id="' + data.data.ID + '" data-username="' + data.data.Username + '" id="delete_btn">刪除帳號</a></div>';
+
+                $("#memer_info").append(strHTML);
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_passwordUpdate(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "member.html?username=" + username;
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //刪除訊息
+        function showdata_delete(data) {
+            if (data.state) {
+                alert(data.message);
+                location.href = 'member.html?username=' + username;
+            } else {
+                alert(data.message);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代辦事項-tools</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        .completed {
+            /* line-through:刪除線 */
+            text-decoration: line-through;
+            color: var(--mycolor11);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-10 offset-1 mt-5">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">{{ text }}</span>
+                    <!-- keyup.enter:綁定可以直接按enter鍵就可以直接輸入 -->
+                    <input type="text" class="form-control" v-model="newTodo" placeholder="請輸入代辦事項!"
+                        v-on:keyup.enter="addTodo">
+                    <button class="btn btn-outline-warning" type="button" id="button-addon2"
+                        v-on:click="addTodo">新增</button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <!-- visibility 屬性是用於指定是否 render 由元素產生的 box，可用來顯示或隱藏 box，而無需更改文件的佈局。 -->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item" v-on:click="visibility = 'all'">
+                                <a class="nav-link" v-bind:class="{ 'active' : visibility == 'all'}" href="#">全部</a>
+                            </li>
+                            <li class="nav-item" v-on:click="visibility = 'active'">
+                                <a class="nav-link" v-bind:class="{ 'active' : visibility == 'active'}" href="#">進行中</a>
+                            </li>
+                            <li class="nav-item" v-on:click="visibility = 'completed'">
+                                <a class="nav-link" v-bind:class="{ 'active' : visibility == 'completed'}"
+                                    href="#">已完成</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="(item,index) in filterTodo" v-bind:key="item.id">
+                                <div class="d-flex" v-if="cacheItem.id != item.id">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" v-bind:id="item.id"
+                                            v-model="item.completed" >
+                                        <!-- dblclick:雙擊事件 -->
+                                        <label class="form-check-label fs-5"
+                                            v-bind:class="{ 'completed' : item.completed }"
+                                            v-on:dblclick="editItem(item)">
+                                            {{ item.title }}
+                                        </label>
+                                    </div>
+                                    <button type="button" class="btn-close ms-auto" aria-label="Close"
+                                        v-on:click="removeTodo(item)"></button>
+                                </div>
+                                <!-- keyup:在指定物件上偵測到鍵盤上被按住的鍵已放開。 -->
+                                <input type="text" class="form-control mb-2" v-if="cacheItem.id == item.id"
+                                    v-model="cacheTitle" v-on:keyup.enter="doneTodo(item)" v-on:keyup.esc="cancelTodo">
+
+                                <!-- 代辦事項明細 -->
+                                <div class="d-flex" v-if="detailItem.id != item.id">
+                                    <div class="form-check">
+                                        <input class="form-check-input ms-2" type="checkbox"
+                                            v-bind:id="item.id" v-model="item.detailcompleted" v-bind="{ 'checked' : item.completed}">
+                                        <label class="form-check-label"
+                                            v-bind:class="{ 'completed' : item.detailcompleted}"
+                                            v-on:dblclick="edit_de_Item(item)">
+                                            <span v-if="item.detail !== ''" v-bind:class="{ 'completed' : item.completed}">{{ item.detail }}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control mb-2" v-if="detailItem.id == item.id"
+                                    v-model="detailTitle" v-on:keyup.enter="done_de_Todo(item)"
+                                    v-on:keyup.esc="cancel_de_Todo">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex">
+                            <div class="fs-6 me-auto">還有<span class="text-danger">{{ countActive }}</span>筆未完成,<span
+                                    class="text-primary">{{ countActive }}</span>筆進行中,<span class="text-success">{{
+                                    countCompleted }}</span>筆已完成</div>
+                            <button type="button" class="btn btn-outline-dark" v-on:click="destory">清除所有任務</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/vue.global.js"></script>
+    <script>
+        var App = {
+            data() {
+                return {
+                    text: '代辦事項',
+                    newTodo: '',
+                    newdetailTodo: '',
+                    visibility: 'all',//all:全部 active:進行中 completed:已完成
+                    //cache快取之意
+                    cacheTitle: '',
+                    cacheItem: [],
+                    //明細
+                    detailTitle: '',
+                    detailItem: [],
+                    todos: [
+                        {
+                            id: '001',
+                            title: '訂午餐',
+                            detail: '雞腿飯*1',
+                            detailcompleted: false,
+                            completed: false,
+                        },
+                        {
+                            id: '002',
+                            title: '訂下午茶',
+                            detail: '拿鐵咖啡',
+                            detailcompleted: false,
+                            completed: false
+                        },
+                        {
+                            id: '003',
+                            title: '訂晚餐',
+                            detail: '咖哩飯',
+                            detailcompleted: false,
+                            completed: false
+                        }
+                    ]
+                }
+            },
+            methods: {
+                addTodo() {
+                    var vm = this;
+                    //Date.now() 方法是返回自1970年1月1日 00:00:00 UTC到當前时间的毫秒数。
+                    var timestamp = Date.now();
+                    //trim 能夠自動去除用戶在 input 框內首尾輸入的空格
+                    var newTitle = vm.newTodo.trim();
+                    //判斷阻止空白輸入
+                    if (!newTitle) {
+                        return;
+                    }
+                    vm.todos.push({
+                        id: timestamp,
+                        title: newTitle,
+                        detail: '代辦事項內容',
+                        completed: false
+                    });
+                    vm.newTodo = '';
+                    //console.log(timestamp);
+                },
+                removeTodo(todo) {
+                    console.log(todo);
+                    var vm = this;
+                    //findIndex() 方法將依據提供的測試函式，尋找陣列中符合的元素，並返回其 index（索引）。如果沒有符合的對象，將返回 -1 。
+                    var newIndex = vm.todos.findIndex((item, index) => {
+                        return todo.id == item.id;
+                    });
+                    console.log(newIndex);
+                    //splice() 方法可以藉由刪除既有元素並／或加入新元素來改變一個陣列的內容。
+                    vm.todos.splice(newIndex, 1);
+                },
+                editItem(todo) {
+                    var vm = this;
+                    vm.cacheTitle = todo.title;
+                    vm.cacheItem = todo;
+                    console.log(todo);
+                },
+                edit_de_Item(detailtodo) {
+                    var vm = this;
+                    vm.detailTitle = detailtodo.detail;
+                    vm.detailItem = detailtodo;
+                    console.log(detailtodo);
+                },
+                doneTodo(todo) {
+                    var vm = this;
+                    todo.title = vm.cacheTitle;
+                    vm.cacheTitle = '';
+                    vm.cacheItem = '';
+                },
+                done_de_Todo(detailtodo) {
+                    var vm = this;
+                    detailtodo.detail = vm.detailTitle;
+                    vm.detailTitle = '';
+                    vm.detailItem = '';
+                    console.log(detailtodo);
+                },
+                cancelTodo() {
+                    var vm = this;
+                    vm.cacheTitle = '';
+                    vm.cacheItem = '';
+                },
+                cancel_de_Todo() {
+                    var vm = this;
+                    vm.detailTitle = '';
+                    vm.detailItem = '';
+                },
+                destory() {
+                    this.todos = [];
+                },
+            },
+            computed: {
+                filterTodo() {
+                    var vm = this;
+                    if (vm.visibility == 'all') {
+                        return vm.todos;
+                    } else if (vm.visibility == 'active') {
+                        //將未完成的資料收集回傳
+                        var activeTodo = [];
+                        vm.todos.forEach(function (item, key) {
+                            if (!item.completed) {
+                                activeTodo.push(item);
+                            }
+                        });
+                        return activeTodo;
+                    } else if (vm.visibility == 'completed') {
+                        //將已完成的資料收集回傳
+                        var completedTodo = [];
+                        vm.todos.forEach(function (item, key) {
+                            if (item.completed) {
+                                completedTodo.push(item);
+                            }
+                        });
+                        return completedTodo;
+                    }
+                },
+                countActive() {
+                    var vm = this;
+                    var active = 0;
+                    vm.todos.forEach(function (item, key) {
+                        if (!item.completed) {
+                            active++;
+                        }
+                    });
+                    return active;
+                },
+                countCompleted() {
+                    var vm = this;
+                    var completed = 0;
+                    vm.todos.forEach(function (item, key) {
+                        if (item.completed) {
+                            completed++;
+                        }
+                    });
+                    return completed;
+                },
+            }
+        };
+        Vue.createApp(App).mount('#app');
+    </script>
+</body>
+
+</html>

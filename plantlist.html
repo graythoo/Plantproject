@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員種植資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/myall.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        .table-rwd tbody tr td a {
+            text-decoration: none;
+        }
+
+        @media screen and (max-width:768px) {
+            .table-rwd thead {
+                display: none;
+                
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                border: 2px solid var(--myblack);
+                margin-top: 15px;
+                /* background-color: var(--gray01); */
+                border-radius: 10px 10px 10px 10px;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+                font-size: 15px;
+            }
+
+            .table-rwd tbody tr td:before {
+                content: attr(data-th)":";
+                color: var(--mycolor15);
+                display: block;
+                float: left;
+                text-align: right;
+                width: 15%;
+                font-weight: bolder;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl" style="background-color: var(--mycolor04);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand fs-3 fw-700 text-white" href="#">管理員管理系統</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-700 fs-5" href="#" id="main" style="color:var(--mycolor14)">回到首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 active" href="#" id="memberinfo">會員資料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="memberdata">數據分析</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="plantlist">會員種植資料</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fs-5 disabled" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            合作對象
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="mise">合作店家</a></li>
+                            <li><a class="dropdown-item" href="#" id="expert">合作專家</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#" id="employee">聯絡內部</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <span><i class="fa-solid fa-circle mt-2 me-1"
+                            style="color: var(--light_leaf);transform:scale(0.6,0.6);" id="premission"></i></span>
+                    <span class="fw-700 fs-3 me-4 text-end" id="login_member" style="color:var(--mycolor21)"></span>
+                    <button class="btn btn-light" id="logout_btn">登出</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-5">
+                    <div class="card-header text-center fs-3 fw-500 text-white"
+                    style="background-color: var(--mycolor07);">會員種植資料</div>
+                    <div class="card-body" id="mycontent">
+                        <table class="table table-bordered table-striped table-hover table-rwd table-success">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>帳號</th>
+                                    <th>開始種植時間</th>
+                                    <th>名字</th>
+                                    <th>數量</th>
+                                    <th>放置地點</th>
+                                    <th>澆花日期</th>
+                                    <th>澆花時間</th>
+                                    <th>創建時間</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mylist">
+                                <tr class="text-center">
+                                    <td data-th="帳號"></td>
+                                    <td data-th="開始種植時間"></td>
+                                    <td data-th="名字"></td>
+                                    <td data-th="數量"></td>
+                                    <td data-th="放置地點"></td>
+                                    <td data-th="澆花日期"></td>
+                                    <td data-th="澆花時間"></td>
+                                    <td data-th="創建時間"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <div class="card h-100">
+                    <div class="card-header text-bg-danger text-center">植物名字統計(長條圖)</div>
+                    <div class="card-body">
+                        <canvas id="PnameChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="card h-100">
+                    <div class="card-header text-bg-warning text-center text-white">植物澆花時間(折線圖)</div>
+                    <div class="card-body">
+                        <canvas id="WtimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="card h-100">
+                    <div class="card-header text-bg-primary text-center text-white">植物放置地點分布統計(極座標圖餅圖)</div>
+                    <div class="card-body">
+                        <canvas id="PlocationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/Su_check_member_state.js"></script>
+    <script src="js/control_username_plus.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        let PnameChart;
+        let WtimeChart;
+        let PlocationChart;
+        //報表（植物名、晚上種下午重早上中、澆花時間）
+        $(function () {
+            //確認UID登入
+            check_member_stste();
+            //加上帳號名
+            control_username_plus();
+
+            //table渲染
+            $.ajax({
+                type:"GET",
+                url:"plantlist_R_api.php",
+                dataType:"json",
+                async:false,
+                success:showdata_R,
+                error:function(){
+                    console.log("error-plantlist_R_api.php");
+                }
+            });
+
+            //植物名字統計
+            $.ajax({
+                type:"GET",
+                url:"user_plantname_count.php",
+                dataType:"json",
+                success:showdata_plantname_count,
+                error:function(){
+                    alert("error-user_plantname_count.php");
+                }
+            });
+
+            //澆花時間統計
+            $.ajax({
+                type:"GET",
+                url:"user_plantwtime_count.php",
+                dataType:"json",
+                success:showdata_plantwtime_count,
+                error:function(){
+                    alert("error-user_plantwtime_count.php");
+                }
+            });
+
+            //植物放置地點分布統計
+            $.ajax({
+                type:"GET",
+                url:"user_plantlocation_count.php",
+                dataType:"json",
+                success:showdata_plantlocation_count,
+                error:function(){
+                    alert("error-user_plantlocation_count.php");
+                }
+            });
+
+            //植物名字統計(長條圖)
+            const ctx = document.getElementById('PnameChart');
+
+            PnameChart = new Chart(ctx, {
+                type: 'bar',//長條圖
+                data: {
+                    labels: [],//x軸
+                    datasets: [{
+                        label: '植物名統計',
+                        data: [],//數據資料
+                        backgroundColor: [
+                            'rgba(54,162,235,0.5)',
+                            'rgba(205,55,26,0.5)',
+                            'rgb(132,112,255,0.5)',
+                            'rgb(205,133,63,0.5)',
+                            'rgb(255,106,106,0.5)',
+                            'rgb(112,128,144,0.5)',
+                            'rgb(211,211,211,0.5)',
+                            'rgb(192,255,62,0.5)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+                }
+            });
+
+            //澆花時間統計(折線圖)
+            const ctxWtime = document.getElementById('WtimeChart');
+
+            WtimeChart = new Chart(ctxWtime, {
+                type: 'line',//折線圖
+                data: {
+                    labels: [],//x軸
+                    datasets: [{
+                        label: '澆花時間統計',
+                        data: [],//數據資料
+                        backgroundColor: [
+                            'rgb(255,106,106,0.5)',
+                            'rgb(211,211,211,0.5)',
+                            'rgb(192,255,62,0.5)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+                }
+            });
+
+            //植物放置地點分布統計(極座標圖餅圖)
+            const ctxPlocation = document.getElementById('PlocationChart');
+            PlocationChart = new Chart(ctxPlocation, {
+                type: 'polarArea',//極座標圖餅圖
+                data: {
+                    labels: [],//x軸
+                    datasets: [{
+                        label: '植物放置地點分布',
+                        data: [],//數據資料
+                        backgroundColor: [
+                            'rgb(132,112,255,0.5)',
+                            'rgb(205,133,63,0.5)',
+                            'rgb(192,255,62,0.5)',
+                            'rgb(255,106,106,0.5)',
+                            'rgba(54,162,235,0.5)',
+                            'rgb(211,211,211,0.5)',                            
+                            'rgb(112,128,144,0.5)',
+                            'rgba(205,55,26,0.5)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+                }
+            });
+        });
+       
+        function showdata_R(data){
+            console.log(data);
+            if(data.state){
+                $("#mylist").empty();
+                data.data.forEach(function (item) {
+
+                    var strHTML = ' <tr class="text-center"><td data-th="帳號">'+item.Username+'</td><td data-th="開始種植時間">'+item.Pdate+'</td><td data-th="名字">'+item.Pname+'</td><td data-th="數量">'+item.Pnum+'</td><td data-th="放置地點">'+item.Plocation+'</td><td data-th="澆花日期">'+item.Wdate+'</td><td data-th="澆花時間">'+item.Wtime+'</td><td data-th="創建時間">'+item.Created_at+'</td></tr>';
+                    $("#mycontent #mylist").append(strHTML);
+                });
+            }else{
+                alert(data.message);
+            }
+        }
+
+        function showdata_plantname_count(data){
+            console.log(data);
+            data.data.forEach(function(item){
+                console.log(item.Pname+item.num);
+                
+                //植物名字統計(長條圖)
+                PnameChart.data.labels.push(item.Pname);
+                PnameChart.data.datasets[0].data.push(item.num);
+            });
+            PnameChart.update();
+        }
+        
+        function showdata_plantwtime_count(data){
+            console.log(data);
+            console.log(data.data[0].time_period);
+            console.log(data.data[0].num);
+            data.data.forEach(function(item){
+                console.log(item.time_period+item.num);
+
+                //澆花時間統計(折線圖)
+                WtimeChart.data.labels.push(item.time_period);
+                WtimeChart.data.datasets[0].data.push(item.num);
+            });
+            WtimeChart.update();
+        }
+
+        function showdata_plantlocation_count(data){
+            console.log(data);
+            data.data.forEach(function(item){
+                console.log(item.Plocation+item.num);
+
+                //植物放置地點統計(極座標圖餅圖)
+                PlocationChart.data.labels.push(item.Plocation);
+                PlocationChart.data.datasets[0].data.push(item.num);
+            });
+            PlocationChart.update();
+        }
+    </script>
+</body>
+
+</html>

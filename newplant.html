@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增植物</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/plant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            background-color: var(--c_bgc);
+            font-family: 'Kaisei Opti';
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .home_btn {
+            display: block;
+            margin-top: 20px;
+            margin-right: 100px;
+        }
+
+        .home_btn:hover {
+            background-color: var(--home_btn_hover);
+            width: 80px;
+            height: 80px;
+        }
+
+        .banner nav {
+            height: 10px;
+        }
+
+        @media screen and (max-width:768px) {
+            .plant {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark" style="background-color: var(--social);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-seedling" style="color:var(--seed)"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="plant.SPA.html">首頁</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">關於我們</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#s09" id="learning">課程教學</a></li>
+                            <li><a class="dropdown-item" href="#s05">我們的理念</a></li>
+                            <li><a class="dropdown-item" href="#s08">聯絡我們</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color:var(--leaf)" id="dropdown">
+                            記錄您的植物
+                        </a>
+                        <ul class="dropdown-menu" id="dropdown_menu">
+                            <li>
+                                <a class="dropdown-item fs-5 text-primary  wow animate__pulse" data-wow-duration="1s"
+                                    data-wow-delay="0s" data-wow-iteration="infinite" target="_blank" href="#"
+                                    id="link_control">會員中心</a>
+                                <a class="dropdown-item fs-5 text-primary  wow animate__pulse" data-wow-duration="1s"
+                                    data-wow-delay="0s" data-wow-iteration="infinite" target="_blank" href="#" id="main"
+                                    style="display: none;">會員中心</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a target="_blank" class="dropdown-item fw-700" href="#" id="link_control01">新增植物</a>
+                            </li>
+                            <li><a target="_blank" class="dropdown-item fw-700" href="#" id="link_control02">我的植物</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                    id="link_control03">新增日記</a></li>
+                            <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                    id="link_control04">種植日記</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                    id="link_control05">種植小知識</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="color:var(--home_font)" id="memberonly">會員專屬功能</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-success" href="#" style="display: none;" target="_blank"
+                                    id="link">後臺管理</a></li>
+                            <li>
+                            <li>
+                                <a class="dropdown-item" href="#" id="maskmap" target="_blank">口罩地圖</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" target="_blank" style="display: none;"
+                                    id="restaurantmap">餐飲資料地圖</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#" target="_blank" id="todolist">代辦事項</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <span><i class="fa-solid fa-circle mt-2 me-1"
+                            style="color: var(--light_leaf);transform:scale(0.6,0.6);" id="premission"></i></span>
+                    <span class="fw-700 fs-3 me-4" id="login_member"></span>
+                    <button class="btn btn-light" id="logout_btn">登出</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="wrapper">
+            <div class="content" id="mycontent">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="" class="plant bg-cover" alt="" id="prevImg">
+                        <div class="mb-3 mt-3" style="text-align: center;">
+                            <label for="fileupload" class="form-label">請上傳圖片</label>
+                            <div class="row align-items-center mb-3" style="justify-content: center;">
+                                <div class="col-auto">
+                                    <input class="form-control" type="file" id="fileupload" name="fileupload">
+                                    <!-- <button class="btn btn-primary mt-3" id="upload_btn">上傳</button> -->
+                                </div>
+                                <div class="col-auto">
+                                    <div class="form-text text-start">檔案限制為2MB</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <input type="hidden" id="username"> -->
+                <div class="mb-3 text-start">
+                    <label for="pdate" class="form-label">開始種植的那天</label>
+                    <input type="date" name="pdate" id="pdate" class="form-control">
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="pname" class="form-label">植物名字</label>
+                    <input type="text" id="pname" name="pname" class="form-control" placeholder="字數限制為1~30" required>
+                    <div class="form-text" id="err_pname"></div>
+                </div>
+                <div class="text-start">
+                    <label for="pnum" class="form-label">種了幾株</label>
+                </div>
+                <div class="input-group mb-3">
+                    <select name="pnum" id="pnum" class="form-select mb-3" class="form-control"
+                        aria-describedby="basic-addon" aria-label="pnum">
+                        <option selected>--請輸入種了多少株--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <span class="input-group-text" id="basic-addon" style="height:38px">株</span>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="plocation" class="form-label">植物放置地點</label>
+                    <input id="plocation" name="plocation" class="form-control" list="place" placeholder="請輸入植物的所放置地點">
+                    <div class="valid-feedback">已輸入地點</div>
+                    <div class="invalid-feedback">未輸入地點</div>
+                    <datalist id="place">
+                        <option value="陽台"></option>
+                        <option value="房間"></option>
+                        <option value="浴室"></option>
+                        <option value="門口"></option>
+                        <option value="客廳"></option>
+                        <option value="花園"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="wdate" class="form-label">澆花提醒</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="date" class="form-control" id="wdate" name="wdate">
+                        </div>
+                        <div class="col-6">
+                            <input type="time" class="form-control" id="wtime" name="wtime">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 text-start">
+                    <label for="pdiscribe" class="form-label">描述</label>
+                    <textarea name="pdiscribe" style="overflow:auto" id="pdiscribe" cols="82" rows="10"
+                        class="form-control" placeholder="請輸入..."></textarea>
+                    <div class="form-text" style="font-size:medium" id="err_pdiscribe">字數上限為200字</div>
+                </div>
+                <div class="mt-5 sbtn">
+                    <a href="#" class="save_btn w-100 mb-3 disabled" id="ok_btn">儲存</a>
+                    <a href="#" class="cancel_btn w-100" id="cancel">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="position: relative;">
+        <div class="px-5">
+            <span><a href="#" style="color:var(--home_font)" class="pe-md-4">HOME</a></span>
+            <span><a href="#s05" class="pe-md-4">About Us</a></span>
+            <span><a href="#s08" class="pe-md-4">Contact</a></span>
+            <span><a href="#s07" class="pe-md-4">FAQs</a></span>
+            <span><a href="https://zh-tw.facebook.com/" target="_blank" class="pe-md-2"><i class="fa-brands fa-facebook"
+                        style="color: var(--home_font) ;"></i></a></span>
+            <span> <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"
+                        style="color: var(--home_font) ;"></i></a></span>
+        </div>
+        <div>
+            <p class="me-5" style="position:absolute;right: 0;bottom: 0;">Copyright © 2023 雲端班_3號 版權所有</p>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/plant_check_member_state.js"></script>
+    <script src="js/username_plus.js"></script>
+    <script>
+
+        var id;
+        var username;
+        var flag_pname = false;
+        var flag_pdiscribe = false;
+        var flag_plocation = false;
+        var flag_upload = false;//檔案是否規定
+        var imgData;//儲存照片的Ｄata數據
+        $(function () {
+            //確認登入的狀態
+            check_member_state();
+            //加上帳號名
+            username_plus();
+
+            //取得網址參數
+            var urlParams = new URLSearchParams(window.location.search);
+            username = urlParams.get('username');
+            //讀取植物
+            var myLink = document.getElementById('ok_btn');
+            myLink.href = 'plant.html?username=' + username;
+            var myLink01 = document.getElementById('cancel');
+            myLink01.href = 'plant.html?username=' + username;
+            //管理者會員中心
+            var mySLink = document.getElementById('main');
+            mySLink.href = 'control_member.html?username=' + username;
+
+            $("#fileupload").change(function () {
+                // console.log($(this));
+                // console.log(fileupload);
+                console.log(fileupload.files[0]);
+                console.log(fileupload.files[0].type);
+                console.log(fileupload.files[0].size);
+                if (fileupload.files[0].type == "image/png" || fileupload.files[0].type == "image/jpeg" && fileupload.files[0].size < 2 * 1024 * 1024) {
+                    console.log("檔案格式符合");
+                    console.log(URL.createObjectURL(fileupload.files[0]));
+                    $("#prevImg").removeClass("d-none");//URL.createObjectURL是只要圖片上傳都會用到
+                    //顯示其上傳的圖片
+                    $("#prevImg").attr("src", URL.createObjectURL(fileupload.files[0]));
+                    //attr是改變參數用的(不過id或class不會去改),會變成src加上後面那段暫存的檔案
+                    flag_upload = true;
+                } else {
+                    alert("檔案容量超過限制");
+                    console.log("檔案格式不符合");
+                    $("#prevImg").addClass("d-none");
+                    flag_upload = false;
+                }
+            });
+
+            $("#mycontent #ok_btn").bind("click", function () {
+                console.log("ok");
+
+                if (flag_upload) {
+                    //傳遞至後端儲存
+                    console.log(fileupload);
+                    console.log(fileupload.files);
+                    console.log(fileupload.files[0]);
+
+                    //取得網址參數
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var username = urlParams.get('username');
+
+                    var formData = new FormData();
+                    formData.append("file", fileupload.files[0]);
+
+                    formData.append("username", username);
+                    console.log(formData);
+                    $.ajax({
+                        type: "POST",
+                        url: "plant-fileupload-api.php",
+                        data: formData,
+                        dataType: "json",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        async: false,
+                        success: showdata_upload,
+                        error: function () {
+                            console.log("error-plant-fileupload-api.php");
+                        }
+                    });
+                } else {
+                    alert("檔案必須為png、jpeg或是超過上限!");
+                }
+
+                //除了圖片其他資料上傳
+                var dataJSON = {};
+                dataJSON["username"] = username;
+                dataJSON["pdate"] = $("#pdate").val();
+                dataJSON["pname"] = $("#pname").val();
+                dataJSON["pnum"] = $("#pnum").val();
+                dataJSON["plocation"] = $("#plocation").val();
+                dataJSON["wdate"] = $("#wdate").val();
+                dataJSON["wtime"] = $("#wtime").val();
+                dataJSON["pdiscribe"] = $("#pdiscribe").val();
+                console.log(JSON.stringify(dataJSON));
+
+                $.ajax({
+                    type: "POST",
+                    url: "plant_C_api.php",
+                    data: JSON.stringify(dataJSON),
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    async: false,
+                    success: showdata_Add,
+                    error: function () {
+                        console.log("error!--plant_C_api.php");
+                    }
+                });
+            });
+
+            //植物名字字數監聽
+            $("#pname").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 0 && $(this).val().length < 31) {
+                    //符合規則
+                    $("#err_pname").html("字數符合規則");
+                    $("#err_pname").css("color", "green");
+                    flag_pname = true;
+                } else {
+                    $("#err_pname").html("字數不符合規則");
+                    $("#err_pname").css("color", "red");
+                    flag_pname = false;
+                }
+            });
+
+            //下方描述字數監聽
+            $("#pdiscribe").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length > 0 && $(this).val().length < 201) {
+                    //符合規則
+                    $("#err_pdiscribe").html("字數符合規則");
+                    $("#err_pdiscribe").css("color", "green");
+                    flag_pdiscribe = true;
+                } else {
+                    $("#err_pdiscribe").html("字數不符合規則");
+                    $("#err_pdiscribe").css("color", "red");
+                    flag_pdiscribe = false;
+                }
+            });
+
+            //放置地點字數監聽
+            $("#plocation").bind("input propertychange", function () {
+                if ($(this).val().length > 0) {
+                    $("#plocation").addClass("is-valid");
+                    $("#plocation").removeClass("is-invalid");
+                } else {
+                    $("#plocation").addClass("is-invalid");
+                    $("#plocation").removeClass("is-valid");
+                }
+            });
+        });
+
+        function showdata_Add(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+
+                $("#pdate").val("");
+                $("#pname").val("");
+                $("#pnum").val("");
+                $("#plocation").val("");
+                $("#wdate").val("");
+                $("#wtime").val("");
+                $("#pdiscribe").val("");
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_upload(data) {
+            console.log(data);
+        }
+    </script>
+</body>
+
+</html>
