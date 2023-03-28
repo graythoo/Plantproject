@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+:root {
+    --mycolor01: #c2a6a4;
+    --mycolor02: #8fcbf6;
+    --mycolor03: #48b0e4;
+    --mycolor04: #92aabe;
+    --mycolor05: #337caa;
+    --mycolor06: #a3d5db;
+    --mycolor07: #4ca489;
+    --mycolor08: #37513B;
+    --mycolor09: #6C949a;
+    --mycolor10: #deedec;
+    --mycolor11: #b74f2b;
+    --mycolor12: #b6a09d;
+    --mycolor13: #539db3;
+    --mycolor14: #396575;
+    --mycolor15: #0b253a;
+    --mycolor16: #3a3d6a;
+    --mycolor17: #acb4d4;
+    --mycolor18: #dac6c6;
+    --mycolor19: #8688a9;
+    --mycolor20: #f0d7ee;
+    --mycolor21: #104b70;
+    --mywhite: #f5f6fa;
+    --myblack: #262529;
+    --gray01:#b6bfbd;
+}
+
+.box01 {
+    height: 180px;
+    background-color: var(--mycolor06);
+    border: 3px solid var(--mycolor07);
+    text-align: center;
+    line-height: 180px;
+    font-size: 36px;
+    font-weight: bolder;
+    color: var(--myblack);
+}
+
+.box02 {
+    height: 120px;
+    background-color: var(--mycolor02);
+    border: 3px solid var(--mycolor05);
+    text-align: center;
+    line-height: 120px;
+    font-size: 36px;
+    font-weight: bolder;
+    color: var(--myblack);
+}
+.box04 {
+    height: 120px;
+    background-color: var(--mycolor12);
+    border: 3px solid var(--mycolor11);
+    text-align: center;
+    line-height: 120px;
+    font-size: 36px;
+    font-weight:bolder;
+    color: var(--myblack);
+}
+
+.mybtn {
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    background-color: var(--mycolor17);
+    border: 2px solid var(--mycolor16);
+    font-weight: bolder;
+    color: var(--mycolor09);
+}
+
+.box03{
+    /* border: 3px solid var(--myblack); */
+    background-color: var(--mycolor10);
+    font-weight: bolder;
+}
+.mybtn:hover{
+    color: var(--mycolor11);
+    background-color: var(--mycolor17);
+}
+.box03:hover{
+    background-color: var(--mycolor19);
+}
+
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.fw-100{
+    font-weight: 100;
+}
+.fw-300{
+    font-weight: 300;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight:500;
+}
+.fw-700{
+    font-weight:700;
+}
+.fw-900{
+    font-weight:900;
+}
+.demo {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--mycolor06);
+    border: 2px solid var(--mycolor07);
+}

@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物紀錄</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/plant.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/animate_4.1.1.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .s09-text {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--white);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5%;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .s05-text,
+            .s07-text {
+                background-color: rgba(0, 0, 0, 0.3);
+                color: var(--white);
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding: 15px;
+                border-radius: 5%;
+            }
+
+            .s05-img {
+                right: 0;
+            }
+
+            .s07-img {
+                left: 0;
+            }
+
+            .card01 {
+                margin-left: 13%;
+            }
+
+            .footer {
+                height: 70vh;
+            }
+
+            .footer p {
+                text-align: center;
+            }
+
+            .footer i {
+                line-height: 70px;
+            }
+
+            .footer a {
+                display: block;
+                line-height: 60px;
+                text-align: center;
+
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <!-- ***********01*********** -->
+    <section style="background-color: var(--social);">
+        <div class="container">
+            <div class="text-end">
+                <a href="https://zh-tw.facebook.com/" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-square-instagram" style="color:var(--ig)"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ***********02*********** -->
+    <section style="background-color: var(--navbar);">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa-solid fa-seedling" style="color:var(--seed)"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="plant.SPA.html">首頁</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">關於我們</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#s09" id="learning">課程教學</a></li>
+                                    <li><a class="dropdown-item" href="#s05">我們的理念</a></li>
+                                    <li><a class="dropdown-item" href="#s08">聯絡我們</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle fw-700 fs-4 disabled" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="color:var(--seed)"
+                                    id="dropdown">
+                                    記錄您的植物
+                                </a>
+                                <ul class="dropdown-menu" id="dropdown_menu">
+                                    <li>
+                                        <a class="dropdown-item fs-5 text-primary  wow animate__pulse"
+                                            data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"
+                                            target="_blank" href="#" id="link_control" style="display: none;">會員中心</a>
+                                        <a class="dropdown-item fs-5 text-primary  wow animate__pulse"
+                                            data-wow-duration="1s" data-wow-delay="0s" data-wow-iteration="infinite"
+                                            target="_blank" href="#" id="main" style="display: none;">會員中心</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a target="_blank" class="dropdown-item fw-700" href="#" id="link_control01"
+                                            style="display: none;">新增植物</a></li>
+                                    <li><a target="_blank" class="dropdown-item fw-700" href="#" id="link_control02"
+                                            style="display: none;">我的植物</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                            id="link_control03" style="display: none;">新增日記</a></li>
+                                    <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                            id="link_control04" style="display: none;">種植日記</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a target="_blank" class="dropdown-item fw-700 disabled" href="#"
+                                            id="link_control05" style="display: none;">種植小知識</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle fw-700 fs-4" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    style="color:var(--font05);display:none;" id="memberonly">會員專屬功能</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item text-success" href="#" style="display: none;"
+                                            target="_blank" id="link">後臺管理</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" id="maskmap" style="display: none;"
+                                            target="_blank">口罩地圖</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" style="display: none;" target="_blank"
+                                            id="restaurantmap">餐飲資料地圖</a></li>
+                                    <li><a class="dropdown-item" href="#" style="display: none;" target="_blank"
+                                            id="todolist">代辦事項</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <span><i class="fa-solid fa-circle mt-2 me-1"
+                                    style="color: var(--light_leaf);transform:scale(0.6,0.6);display:none"
+                                    id="premission"></i></span>
+                            <span class="fw-700 fs-3 me-4" id="Sulogin_member"></span>
+                            <span class="fw-700 fs-3 me-4" id="login_member"></span>
+                            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal"
+                                id="s2_Sulogin_btn" data-bs-target="#SuloginModal">管理員專區</button>
+                            <button class="btn btn-outline-primary me-2 wow animate__bounce" type="button"
+                                data-bs-toggle="modal" id="s2_login_btn" data-bs-target="#loginModal"
+                                data-wow-duration="2s" data-wow-delay="0s" data-wow-iteration="infinite">登入</button>
+                            <button class="btn btn-light" style="display:none;" id="s2_logout_btn">登出</button>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                                data-bs-target="#registerModal" id="s2_reg_btn">註冊</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!-- 管理員loginModal -->
+    <div class="modal fade" id="SuloginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">管理者登入</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="Sulogin_username" class="form-label">帳號</label>
+                        <input type="text" id="Sulogin_username" name="Sulogin_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Sulogin_password" class="form-label">密碼</label>
+                        <input type="password" id="Sulogin_password" name="Sulogin_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info me-auto text-white" data-bs-toggle="modal"
+                        data-bs-target="#SuregisterModal" id="s2_Sureg_btn">前往註冊</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="Sulogin_btn" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 管理員registerModal -->
+    <div class="modal fade" id="SuregisterModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary">
+                    <h1 class="modal-title fs-5 text-white" id="registerModalLabel">管理員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="Sureg_name" class="form-label">名字</label>
+                                <input type="text" id="Sureg_name" name="Sureg_name" class="form-control"
+                                    placeholder="請輸入您的名字">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Sureg_username" class="form-label">帳號</label>
+                                <input type="text" id="Sureg_username" name="Sureg_username" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="valid-feedback" id="Sureg_valid-feedback">帳號輸入正確!</div>
+                                <div class="invalid-feedback" id="Sureg_invalid-feedback">帳號輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Sureg_password" class="form-label">密碼</label>
+                                <input type="password" id="Sureg_password" name="Sureg_password" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="form-text" id="err_Sureg_password"></div>
+                                <div class="valid-feedback">密碼輸入正確!</div>
+                                <div class="invalid-feedback">密碼輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Sureg_re_password" class="form-label">確認密碼</label>
+                                <input type="password" id="Sureg_re_password" name="Sureg_re_password"
+                                    class="form-control" placeholder="為4~12個字">
+                                <div class="form-text" id="err_Sureg_re_password"></div>
+                                <div class="valid-feedback">密碼輸入一致</div>
+                                <div class="invalid-feedback">密碼輸入不一致</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="Sureg_role" class="form-label">職稱</label>
+                                    <select name="Sureg_role" id="Sureg_role" class="form-select mb-3 form-control"
+                                        aria-describedby="basic-addon" aria-label="Sureg_role">
+                                        <option selected disabled>--請選擇職稱--</option>
+                                        <option value="董事長">董事長</option>
+                                        <option value="執行長">執行長</option>
+                                        <option value="總經理">總經理</option>
+                                        <option value="副總經理">副總經理</option>
+                                        <option value="行銷長">行銷長</option>
+                                        <option value="財務長">財務長</option>
+                                        <option value="人資長">人資長</option>
+                                        <option value="協理">協理</option>
+                                        <option value="處長">處長</option>
+                                        <option value="副處長">副處長</option>
+                                        <option value="特別助理">特別助理</option>
+                                        <option value="祕書">祕書</option>
+                                        <option value="經理">經理</option>
+                                        <option value="副理">副理</option>
+                                        <option value="襄理">襄理</option>
+                                        <option value="課長">課長</option>
+                                        <option value="副課長">副課長</option>
+                                        <option value="主任">主任</option>
+                                        <option value="組長">組長</option>
+                                        <option value="職員">職員</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="Sureg_ext" class="form-label">分機</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text text-white"
+                                            style="background-color: var(--cancel_btn)">#</span>
+                                        <input type="text" class="form-control" placeholder="請輸入您的分機" id="Sureg_ext"
+                                            name="Sureg_ext">
+                                        <div class="valid-feedback" id="Sureg_ext_valid-feedback">分機輸入正確!</div>
+                                        <div class="invalid-feedback" id="Sureg_ext_invalid-feedback">分機輸入錯誤!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Sureg_email" class="form-label">e-mail</label>
+                                <input type="email" id="Sureg_email" name="Sureg_email" class="form-control"
+                                    placeholder="為6~20個字">
+                                <div class="valid-feedback">輸入正確!</div>
+                                <div class="invalid-feedback">輸入錯誤!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info text-white me-auto" data-bs-toggle="modal"
+                        data-bs-target="#SuloginModal">前往登入</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="Sureg_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用者loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="login_username" class="form-label">帳號</label>
+                        <input type="text" id="login_username" name="login_username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="login_password" class="form-label">密碼</label>
+                        <input type="password" id="login_password" name="login_password" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-info me-auto text-white" data-bs-toggle="modal"
+                        data-bs-target="#SuregisterModal" id="s2_Sureg_btn">前往註冊</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="login_btn" data-bs-dismiss="modal">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用者registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h1 class="modal-title fs-5" id="registerModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="box py-5">
+                                <div class="d-flex justify-content-center">
+                                    <span><i class="fa-solid fa-leaf" style="color:var(--leaf)"></i></span>
+                                    <span class="fs-2 mb-3 fw-700 px-2" style="text-align: center;">會員條款</span>
+                                    <span><i class="fa-solid fa-leaf" style="color:var(--leaf)"></i></span>
+                                </div>
+                                <div class="fs-5 mb-2 px-4" style="color:var(--navbar)">
+                                    1.在您同意此條款後，本網站將會取得您的帳戶名稱、密碼及電子郵件等資訊。</div>
+                                <div class="fs-5 mb-2 px-4" style="color:var(--navbar)">
+                                    2.您所提供的帳戶名稱、密碼及電子郵件等資訊，僅作為本公司記錄之目的，您所有的個人資訊將一概不會向外洩露，敬請放心。
+                                </div>
+                                <div class="fs-5 mb-3 px-4" style="color:var(--navbar)">
+                                    3.您必須為自己的「植物紀錄」帳戶使用方式負責，包括採取合理步驟保護您的「植物紀錄」帳戶。
+                                </div>
+                                <div class="fs-5 mb-2 px-4 pb-3" style="color:var(--navbar)">
+                                    4.雖然我們授權您使用「植物紀錄」網頁的各項服務，但我們在服務中所擁有的智慧財產權仍為本網站所有。
+                                </div>
+                            </div>
+                            <div class="form-check" style="position: absolute;left: 5;bottom: 0;">
+                                <input type="checkbox" id="mem_check01" name="mem_check01" class="form-check-input">
+                                <label for="mem_check01" class="form-check-label">遵守以上守則</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="reg_username" class="form-label">帳號</label>
+                                <input type="text" id="reg_username" name="reg_username" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="valid-feedback" id="reg_valid-feedback">帳號輸入正確!</div>
+                                <div class="invalid-feedback" id="reg_invalid-feedback">帳號輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_password" class="form-label">密碼</label>
+                                <input type="password" id="reg_password" name="reg_password" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="form-text" id="err_reg_password"></div>
+                                <div class="valid-feedback">密碼輸入正確!</div>
+                                <div class="invalid-feedback">密碼輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_re_password" class="form-label">確認密碼</label>
+                                <input type="password" id="reg_re_password" name="reg_re_password" class="form-control"
+                                    placeholder="為4~12個字">
+                                <div class="form-text" id="err_reg_re_password"></div>
+                                <div class="valid-feedback">密碼輸入一致</div>
+                                <div class="invalid-feedback">密碼輸入不一致</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_gender" class="form-label">性別</label>
+                                <select name="reg_gender" id="reg_gender" class="form-select mb-3 form-control"
+                                    aria-describedby="basic-addon" aria-label="reg_gender">
+                                    <option selected disabled>--請選擇性別--</option>
+                                    <option value="男性">男性</option>
+                                    <option value="女性">女性</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">居住城市</label>
+                                <select name="reg_city" id="reg_city" class="form-select mb-3 form-control"
+                                    aria-describedby="basic-addon" aria-label="reg_city">
+                                    <option disabled selected>---選擇縣市---</option>
+                                    <option value="台北市">台北市</option>
+                                    <option value="台中市">台中市</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_tel" class="form-label">電話號碼</label>
+                                <input type="text" class="form-control" aria-describedby="reg_tel" aria-label="reg_tel"
+                                    placeholder="限制為10個字" id="reg_tel" maxlength="10">
+                                <div class="valid-feedback">輸入正確!</div>
+                                <div class="invalid-feedback">輸入錯誤!</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reg_email" class="form-label">e-mail</label>
+                                <input type="email" id="reg_email" name="reg_email" class="form-control"
+                                    placeholder="為6~20個字">
+                                <div class="valid-feedback">輸入正確!</div>
+                                <div class="invalid-feedback">輸入錯誤!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info text-white me-auto" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">前往登入</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="reg_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ***********03*********** -->
+    <section>
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                    aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-cover" style="background-image: url(imgs/plant01.jpg);height:460px">
+                    <div class="carousel-caption d-none d-md-block text-warning px-5">
+                        <h3 class="fw-700">快記錄下植物成長的每個過程吧！</h3>
+                    </div>
+                </div>
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(imgs/plant02.jpg);height: 460px;">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h3 class="fw-700">寫下您對他的稱呼</h3>
+                    </div>
+                </div>
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(imgs/plant03.jpg);height: 460px;">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h3 class="fw-700">放在您所想要的各個角落地點!</h3>
+                    </div>
+                </div>
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(imgs/plant04.jpg);height: 460px;">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h3 class="fw-700">這次您種了幾株呢？</h3>
+                    </div>
+                </div>
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(imgs/plant05.jpg);height: 460px;">
+                    <div class="carousel-caption d-none d-md-block px-5 text-success">
+                        <h3 class="fw-700">記錄著每個獨一無二的它！</h3>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ***********04*********** -->
+    <section style="background-color: var(--save_btn);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center p-3">
+                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/coujyjzs.json" trigger="loop"
+                        colors="primary:#121331,secondary:#2ca58d,tertiary:#b26836,quaternary:#e8b730"
+                        style="width:180px;height:180px">
+                    </lord-icon>
+                    <div class="fs-3 my-3 fw-700" style="color:var(--deep_leaf)">新增植物</div>
+                    <p class="d-none d-md-block">新增目前所種植的植物名稱、地點、數量...等</p>
+                </div>
+                <div class="col-md-4 text-center p-3">
+                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/qtqvorle.json" trigger="loop"
+                        colors="outline:#121331,primary:#629110,secondary:#ebe6ef,tertiary:#242424"
+                        style="width:180px;height:180px">
+                    </lord-icon>
+                    <div class="fs-3 my-3 fw-700" style="color:var(--deep_leaf)">種植日記</div>
+                    <p class="d-none d-md-block">記錄下植物成長的歷程以及一天又一天的變化過程</p>
+                </div>
+                <div class="col-md-4 text-center p-3">
+                    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/ttioogfl.json" trigger="morph"
+                        colors="primary:#121331,secondary:#ebe6ef,tertiary:#eeca66,quaternary:#c79816,quinary:#f4dc9c"
+                        style="width:180px;height:180px">
+                    </lord-icon>
+                    <div class="fs-3 my-3 fw-700" style="color:var(--deep_leaf)">種植小知識</div>
+                    <p class="d-none d-md-block">搜羅各網站之種植之小知識，使新手更快進入狀況，或使老手溫故知新。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***********05*********** -->
+    <section style="position:relative;" id="s05">
+        <div class="row">
+            <div class="col-md-5 bg-cover s05-img" style="background-image: url(imgs/plant06.jpg);
+            position:absolute;top: 0;bottom: 0;z-index: -1;"></div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-7 s05-text">
+                    <div class="d-flex offset-4 mt-3">
+                        <span>
+                            <i class="fa-solid fa-tree me-2" style='color:var(--leaf)'></i>
+                        </span>
+                        <div class="fs-2 fw-700 text-center" style="color:var(--home_font)">我們的理念</div>
+                        <span>
+                            <i class="fa-solid fa-tree ms-2" style='color:var(--leaf)'></i>
+                        </span>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-6">
+                            <div class="fs-4 text-center fw-700" style="color:var(--font04)">讓日常生活增添精彩!</div>
+                            <p>福建破壞鈴聲下載人物公告心裡證明做什麼，觀念徹底劇情機器誠信理想恐怖，不太對了，上班考慮，你自己勝。
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="fs-4 text-center fw-700" style="color:var(--font04)">讓閒暇時間增添樂趣！</div>
+                            <p>你就一個整個有時候備案風情公斤皇帝頭髮輸入回去，我來一笑會員推坑王漂亮同志職業要是，作家彼此，能學。
+                            </p>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-md-6">
+                                <div class="fs-4 text-center fw-700" style="color:var(--font05)">讓需要的人能確實記錄關於心愛植物的每一刻！
+                                </div>
+                                <p>稱為尤其正常上一頁把我金錢協助排行版本推廣不好我的心，環節沒什麼觀。
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="fs-4 text-center fw-700" style="color:var(--font05)">讓需要的人能不再忘記關於心愛植物的各種資訊!
+                                </div>
+                                <p>分公司好激動新型讓我們生產，連續試題建築手指全市把他，購物空中生。
+                                </p>
+                            </div>
+                            <button class="btn btn-success">詳細內容</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ***********06*********** -->
+    <section id="s06">
+        <div class="container mb-3 justify-content-center" style="filter: drop-shadow(5px 5px 8px var(--black))">
+            <div class="rounded mt-5" style="background-color: var(--social);border:5px solid var(--navbar) ;">
+                <div style="background-color: var(--home_font)">
+                    <div class="d-flex justify-content-center">
+                        <span><i class="fa-solid fa-thumbtack me-2"
+                                style="color:var(--red);text-shadow:5px 5px 0 var(--black);"></i></span>
+                        <div class="display-5 text-center fw-700"
+                            style="color:var(--social);-webkit-text-stroke: 1px var(--black);">關於植物的一些小知識</div>
+                        <span><i class="fa-solid fa-thumbtack ms-2"
+                                style="color:var(--red);text-shadow:5px 5px 0 var(--black);"></i></span>
+                    </div>
+                    <small>
+                        <p class="text-center" style="color:var(--home_btn);">本網站蒐羅了來自各方的專業種植技巧,以供需要的人參考</p>
+                    </small>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card w-75 mb-3"
+                            style="background-color: var(--cancel_btn);box-shadow: 2px 2px 10px 5px var(--black);margin-left: 13%;">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-circle"
+                                    style="color:var(--font04);box-shadow: blur;filter: drop-shadow(10px 10px 7px var(--black));-webkit-text-stroke: 1px var(--black)"></i>
+                                <h5 class="card-title fw-700 fs-3">種植小撇步</h5>
+                                <p class="card-text px-3">這裡介紹了種植相關的各種秘訣，包括如何換盆、如何種植蔬菜、水果...等，想知道?快點選以下按鈕!</p>
+                                <a href="#" class="btn btn-info">詳細資料</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card w-75 card01"
+                            style="background-color: var(--save_btn);box-shadow: 2px 2px 10px 5px var(--black);">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-circle"
+                                    style="transform:scale(0.8,0.8);color:var(--font04);box-shadow: blur;filter: drop-shadow(10px 10px 7px var(--black));-webkit-text-stroke: 1px var(--black)"></i>
+                                <h5 class="card-title fw-700 fs-3">施肥很重要</h5>
+                                <p class="card-text px-4">對於種出一朵又大又艷紅的玫瑰花，抑或是一顆又大又飽滿的大白菜，肥料也是不可或缺的，施肥的時機、功用是什麼，都幫您整理好了!
+                                </p>
+                                <a href="#" class="btn btn-outline-success">詳細資料</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card w-75 mb-3"
+                            style="background-color: var(--light_red);box-shadow: 2px 2px 10px 5px var(--black);margin-left: 13%;">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-circle"
+                                    style="transform:scale(0.8,0.8);color:var(--font04);box-shadow: blur;filter: drop-shadow(10px 10px 7px var(--black));-webkit-text-stroke: 1px var(--black)"></i>
+                                <h5 class="card-title fw-700 fs-3">工具如何挑</h5>
+                                <p class="card-text px-3">俗話說:「工欲善其事，必先利其器」,工具必定是種植中不可或缺的一部分。必備的工具有哪些?有什麼方便的小工具?都在這裡跟您說!
+                                </p>
+                                <a href="#" class="btn btn-outline-danger">詳細資料</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card w-75 card01"
+                            style="background-color: var(--blue);box-shadow: 2px 2px 10px 5px var(--black);">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-circle"
+                                    style="transform:scale(0.8,0.8);color:var(--font04);box-shadow: blur;filter: drop-shadow(10px 10px 7px var(--black));-webkit-text-stroke: 1px var(--black)"></i>
+                                <h5 class="card-title fw-700 fs-3">澆水有學問</h5>
+                                <p class="card-text px-3">澆水也是一門大學問!如何正確澆對水?澆水要間隔多久?澆水有什麼方式、時機?...等，都在底下告訴您!</p>
+                                <a href="#" class="btn btn-primary">詳細資料</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="card mb-3 w-75"
+                            style="background-color: var(--yellow);box-shadow: 2px 2px 10px 5px var(--black);margin-left:13%;">
+                            <div class="card-body text-center">
+                                <i class="fa-solid fa-circle"
+                                    style="transform:scale(0.8,0.8);color:var(--font04);box-shadow: blur;filter: drop-shadow(10px 10px 7px var(--black));-webkit-text-stroke: 1px var(--black);"></i>
+                                <h5 class="card-title fw-700 fs-3">病蟲害防治</h5>
+                                <p class="card-text px-3">植物生病了怎麼辦?預防勝於治療，就算生病了也別擔心，本網站幫助您!</p>
+                                <a href="#" class="btn btn-warning">詳細資料</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***********07*********** -->
+    <!-- html的< dl > < dt >< dd >是在網頁設計上的一種內文排版技巧，通常被稱為定義清單，可以呈現出縮排的效果 -->
+    <section style="position:relative" id="s07">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 s07-text mt-3">
+                    <div class="fs-3 fw-700">常見問題</div>
+                    <small>
+                        <p class="text-secondary ms-2">-您想問的問題解答都在這裡!</p>
+                    </small>
+
+                    <dl class="row px-5">
+                        <dt class="col-sm-4 text-danger fs-4 fw-700 wow animate__bounce" data-wow-duration="3s"
+                            data-wow-delay="0s" data-wow-iteration="infinite">熱門問題</dt>
+                        <dd class="col-sm-8">
+                            <button class="btn btn-success w-100">前往答案</button>
+                        </dd>
+
+                        <dt class="col-sm-4">服務功能</dt>
+                        <dd class="col-sm-8">
+                            <button class="btn btn-outline-success w-100">前往答案</button>
+                        </dd>
+
+                        <dt class="col-sm-4">會員福利</dt>
+                        <dd class="col-sm-8">
+                            <button class="btn btn-success w-100">前往答案</button>
+                        </dd>
+
+                        <dt class="col-sm-4">隱私權與安全性</dt>
+                        <dd class="col-sm-8">
+                            <button class="btn btn-outline-success w-100">前往答案</button>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-md-5 bg-cover s07-img"
+                style="background-image: url(imgs/plant07.jpg); position: absolute;top: 0;bottom: 0;z-index: -1;">
+            </div>
+        </div>
+    </section>
+
+    <!-- ***********08*********** -->
+    <section id="s08">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-6 mt-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14560.136803393192!2d120.610123!3d24.1705333!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2b6f18a6783fa3b!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5Lit5b2w5oqV5YiG572y77yI6Ie65Lit6IG36KiT5bGA77yJ!5e0!3m2!1szh-TW!2stw!4v1672723341862!5m2!1szh-TW!2stw"
+                        width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6 px-5">
+                    <h3 class="fw-700 text-center text-primary text-bg-warning">如果想與我們連繫，煩請留下聯絡資訊</h3>
+                    <div class="mb-2">
+                        <label for="username" class="form-label">姓名</label>
+                        <input type="text" id="username" name="username" class="form-control is-invalid">
+                        <div class="valid-feedback">輸入正確!</div>
+                        <div class="invalid-feedback">輸入錯誤!</div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="tel" class="form-label">電話</label>
+                        <input type="text" id="tel" name="tel" class="form-control is-valid">
+                        <div class="valid-feedback">輸入正確!</div>
+                        <div class="invalid-feedback">輸入錯誤!</div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="email" class="form-label">電子郵件</label>
+                        <input type="email" id="email" name="email" class="form-control is-invalid">
+                        <div class="valid-feedback">輸入正確!</div>
+                        <div class="invalid-feedback">輸入錯誤!</div>
+                    </div>
+                    <div>
+                        <label for="pdiscribe" class="form-label">想和我們說什麼?</label>
+                    </div>
+                    <textarea name="pdiscribe" style="overflow:auto" cols="82" rows="7" class="form-control mb-2"
+                        placeholder="請輸入..."></textarea>
+                    <div class="mb-4 text-end">
+                        <button class="btn btn-outline-secondary">取消</button>
+                        <button class="btn btn-primary">儲存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ***********09*********** -->
+    <section id="s09" style="position:relative;">
+        <div class="row">
+            <div class="col-md-6 bg-cover" style="background-image: url(imgs/vegetable.jpg)">
+                <div class="row justify-content-end">
+                    <div class="col-md-10">
+                        <div class="s09-text p-3 ms-4">
+                            <small class="fw-300 text-danger fw-700">課程教學</small>
+                            <div class="fs-4 fw-700 text-center" style="color:var(--font04)">蔬果專家的初心者之路</div>
+                            <p class="px-3 mt-2 fs-5" style="color:var(--yellow)">
+                                從這個課程可以學習到如何認得日常生活中常見蔬菜的種類、如何正確地種植它們，更重要的是如何料理這些蔬果使它們更加美味。</p>
+                            <a href="#" class="btn btn-outline-warning">詳細資料</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bg-cover" style="background-image: url(imgs/flower.jpg);">
+                <div class="row justify-content-end">
+                    <div class="col-md-10">
+                        <div class="s09-text p-3 ms-4">
+                            <small class="fw-300 text-danger fw-700">課程教學</small>
+                            <div class="fs-4 fw-700 text-center" style="color:var(--seed)">前往「花卉專家」的大道</div>
+                            <p class="px-3 mt-2 fs-5" style="color:var(--save_btn)">
+                                從這個課程可以學習到如何種植花卉、了解常見花卉的種類，以及如何製作乾燥花，讓您的生活周遭增添多采多姿的風景。</p>
+                            <a href="#" class="btn btn-success">詳細資料</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- ***********10*********** -->
+    <section style="position:relative;">
+        <div class="footer">
+            <div class="px-5">
+                <span><a href="#" style="color:var(--home_font)" class="pe-md-4">HOME</a></span>
+                <span><a href="#s05" class="pe-md-4">About Us</a></span>
+                <span><a href="#s08" class="pe-md-4">Contact</a></span>
+                <span><a href="#s07" class="pe-md-4">FAQs</a></span>
+                <span><a href="https://zh-tw.facebook.com/" target="_blank" class="pe-md-2"><i
+                            class="fa-brands fa-facebook" style="color: var(--home_font) ;"></i></a></span>
+                <span> <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"
+                            style="color: var(--home_font) ;"></i></a></span>
+            </div>
+            <div>
+                <p class="me-5" style="position:absolute;right: 0;bottom: 0;">Copyright © 2023 雲端班_3號 版權所有</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/username_plus.js"></script>
+    <script src="js/CityCountyData.js"></script>
+    <script>
+        new WOW().init();
+
+        var flag_check01 = false;
+        var flag_username = true;
+        var flag_password = false;
+        var flag_repassword = false;
+        var flag_ext = true;
+        var flag_email = true;
+        var flag_tel = false;
+        $(function () {
+            //利用cookie 判斷登入狀態
+            if (getCookie("UID01") && getCookie("UID02")) {
+                if (getCookie("UID01") != "" && getCookie("UID02") != "" && getCookie("UID03") != "") {
+                    //傳遞至後端驗證 UID 
+                    //管理者
+                    var jsonData01 = {};
+                    jsonData01["uid01"] = getCookie("UID01");
+                    jsonData01["uid02"] = getCookie("UID02");
+                    jsonData01["uid03"] = getCookie("UID03");
+                    console.log(JSON.stringify(jsonData01));
+                    $.ajax({
+                        type: "POST",
+                        url: "plant_mem_uid_check_api.php",
+                        data: JSON.stringify(jsonData01),
+                        dataType: "json",
+                        success: showdata_uid_check,
+                        error: function () {
+                            alert("error-plant_mem_uid_check_api.php");
+                        }
+                    });
+                } else {
+                    //使用者
+                    var jsonData02 = {};
+                    jsonData02["uid01"] = getCookie("UID01");
+                    jsonData02["uid02"] = getCookie("UID02");
+                    console.log(JSON.stringify(jsonData02));
+                    $.ajax({
+                        type: "POST",
+                        url: "Su_mem_uid_check_api.php",
+                        data: JSON.stringify(jsonData02),
+                        dataType: "json",
+                        success: showdata_Suuid_check,
+                        error: function () {
+                            alert("error-Su_mem_uid_check_api.php");
+                        }
+                    });
+                }
+            } else {
+                $("#s06").hide();
+                $("#s09").hide();
+
+                Swal.fire({
+                    title: '請先登入,謝謝！！',
+                    icon: 'warning'
+                });
+
+                //判斷會員帳號是否為空即未登入
+                if ($("#login_member").text() == "") {
+                    // 判斷網址是否包含使用者名稱
+                    if (window.location.href.indexOf("username=") > -1) {
+                        // 有包含就重設為首頁
+                        window.location.href = "plant.SPA.html";
+                    }
+                }
+            }
+
+            //管理者註冊按鈕
+            $("#Sureg_btn").bind("click", function () {
+                console.log("test");
+                if (flag_password && flag_repassword) {
+
+                    var jsonData = {};
+                    jsonData["role"] = $("#Sureg_role").val();
+                    jsonData["name"] = $("#Sureg_name").val();
+                    jsonData["username"] = $("#Sureg_username").val();
+                    jsonData["password"] = $("#Sureg_password").val();
+                    jsonData["ext"] = $("#Sureg_ext").val();
+                    jsonData["email"] = $("#Sureg_email").val();
+                    console.log(JSON.stringify(jsonData));
+                    $.ajax({
+                        type: "POST",
+                        url: "plant_mem_reg_api.php",
+                        data: JSON.stringify(jsonData),
+                        dataType: "json",
+                        async: false,
+                        success: showdata_reg,
+                        error: function () {
+                            alert("error-plant_mem_reg_api.php");
+                        }
+                    });
+                } else {
+                    alert("欄位不符合規定,請修正!");
+                }
+            });
+
+            //管理者帳號即時監聽(帳號是否存在)
+            $("#Sureg_username").bind("input propertychange", function () {
+                if ($(this).val().length > 3 && $(this).val().length < 13) {
+                    var jsonData = {};
+                    jsonData["username"] = $(this).val();
+                    //console.log(JSON.stringify(jsonData));
+                    $.ajax({
+                        type: "POST",
+                        url: "plant_mem_reg_check_one_api.php",
+                        data: JSON.stringify(jsonData),
+                        dataType: "json",
+                        success: showdata_check_one,
+                        error: function () {
+                            alert("error-plant_mem_reg_check_one_api.php");
+                        }
+                    });
+                    $("#Sureg_valid-feedback").text("帳號輸入正確");
+                    $("#Sureg_username").removeClass("is-invalid");
+                    $("#Sureg_username").addClass("is-valid");
+                    flag_username = true;
+                } else {
+                    $("#Sureg_invalid-feedback").text("帳號輸入錯誤");
+                    $("#Sureg_username").removeClass("is-valid");
+                    $("#Sureg_username").addClass("is-invalid");
+                    flag_username = false;
+                }
+            });
+
+            //管理者密碼即時監聽
+            $("#Sureg_password").bind("input propertychange", function () {
+                if ($(this).val().length > 3 && $(this).val().length < 13) {
+                    $("#Sureg_password").removeClass("is-invalid");
+                    $("#Sureg_password").addClass("is-valid");
+                    flag_password = true;
+                } else {
+                    $("#Sureg_password").removeClass("is-valid");
+                    $("#Sureg_password").addClass("is-invalid");
+                    flag_password = false;
+                }
+            });
+
+            //管理者確認密碼即時監聽
+            $("#Sureg_re_password").bind("input propertychange", function () {
+                console.log("test");
+                //假如相等才是確認一致
+                if ($(this).val() == $("#Sureg_password").val()) {
+                    //密碼確認一致
+                    $("#Sureg_re_password").removeClass("is-invalid");
+                    $("#Sureg_re_password").addClass("is-valid");
+                    flag_repassword = true;
+                } else {
+                    //密碼確認不一致
+                    $("#Sureg_re_password").removeClass("is-valid");
+                    $("#Sureg_re_password").addClass("is-invalid");
+                    flag_repassword = false;
+                }
+            });
+
+            //管理者分機 即時監聽
+            $("#Sureg_ext").bind("input propertychange", function () {
+                var jsonData = {};
+                jsonData["ext"] = $(this).val();
+                $.ajax({
+                    type: "POST",
+                    url: "plant_mem_ext_check_one_api.php",
+                    data: JSON.stringify(jsonData),
+                    dataType: "json",
+                    success: showdata_ext_check_one,
+                    error: function () {
+                        alert("error-plant_mem_ext_check_one_api.php");
+                    }
+                });
+            });
+
+            //管理者e-mail 即時監聽
+            $("#Sureg_email").bind("input propertychange", function () {
+                if ($(this).val().length > 5 && $(this).val().length < 21) {
+                    $("#Sureg_email").removeClass("is-invalid");
+                    $("#Sureg_email").addClass("is-valid");
+                    flag_email = true;
+                } else {
+                    $("#Sureg_email").removeClass("is-valid");
+                    $("#Sureg_email").addClass("is-invalid");
+                    flag_email = false;
+                }
+            });
+
+            //管理員登入按鈕
+            $("#Sulogin_btn").bind("click", function () {
+                var jsonData = {};
+                jsonData["username"] = $("#Sulogin_username").val();
+                jsonData["password"] = $("#Sulogin_password").val();
+                console.log(JSON.stringify(jsonData));
+                $.ajax({
+                    type: "POST",
+                    url: "plant_mem_login_api.php",
+                    data: JSON.stringify(jsonData),
+                    dataType: "json",
+                    success: showdata_login,
+                    error: function () {
+                        alert("error-plant_mem_login_api.php");
+                    }
+                });
+            });
+
+            //使用者註冊
+            $("#reg_btn").bind("click", function () {
+                console.log("test");
+                if (flag_check01) {
+                    if (flag_password && flag_repassword) {
+
+                        var jsonData = {};
+                        jsonData["username"] = $("#reg_username").val();
+                        jsonData["password"] = $("#reg_password").val();
+                        jsonData["gender"] = $("#reg_gender").val();
+                        jsonData["city"] = $("#reg_city").val();
+                        jsonData["tel"] = $("#reg_tel").val();
+                        jsonData["email"] = $("#reg_email").val();
+                        console.log(JSON.stringify(jsonData));
+                        $.ajax({
+                            type: "POST",
+                            url: "Su_mem_reg_api.php",
+                            data: JSON.stringify(jsonData),
+                            dataType: "json",
+                            async: false,
+                            success: showdata_Sureg,
+                            error: function () {
+                                alert("error-Su_mem_reg_api.php");
+                            }
+                        });
+                    } else {
+                        alert("欄位不符合規定,請修正!");
+                    }
+                } else {
+                    alert("請勾選遵守會員守則");
+                }
+            });
+
+            //使用者帳號即時監聽(帳號是否存在)
+            $("#reg_username").bind("input propertychange", function () {
+                if ($(this).val().length > 3 && $(this).val().length < 13) {
+                    var jsonData = {};
+                    jsonData["username"] = $(this).val();
+                    console.log(JSON.stringify(jsonData));
+                    $.ajax({
+                        type: "POST",
+                        url: "Su_mem_reg_check_one_api.php",
+                        data: JSON.stringify(jsonData),
+                        dataType: "json",
+                        success: showdata_Sucheck_one,
+                        error: function () {
+                            alert("error-Su_mem_reg_check_one_api.php");
+                        }
+                    });
+                    $("#reg_valid-feedback").text("帳號輸入正確");
+                    $("#reg_username").removeClass("is-invalid");
+                    $("#reg_username").addClass("is-valid");
+                    flag_username = true;
+                } else {
+                    $("#reg_invalid-feedback").text("帳號輸入錯誤");
+                    $("#reg_username").removeClass("is-valid");
+                    $("#reg_username").addClass("is-invalid");
+                    flag_username = false;
+                }
+            });
+
+            //使用者密碼即時監聽
+            $("#reg_password").bind("input propertychange", function () {
+                if ($(this).val().length > 3 && $(this).val().length < 13) {
+                    $("#reg_password").removeClass("is-invalid");
+                    $("#reg_password").addClass("is-valid");
+                    flag_password = true;
+                } else {
+                    $("#reg_password").removeClass("is-valid");
+                    $("#reg_password").addClass("is-invalid");
+                    flag_password = false;
+                }
+            });
+
+            //使用者確認密碼即時監聽
+            $("#reg_re_password").bind("input propertychange", function () {
+                console.log("test");
+                //假如相等才是確認一致
+                if ($(this).val() == $("#reg_password").val()) {
+                    //密碼確認一致
+                    $("#reg_re_password").removeClass("is-invalid");
+                    $("#reg_re_password").addClass("is-valid");
+                    flag_repassword = true;
+                } else {
+                    //密碼確認不一致
+                    $("#reg_re_password").removeClass("is-valid");
+                    $("#reg_re_password").addClass("is-invalid");
+                    flag_repassword = false;
+                }
+            });
+
+            //使用者reg_tel 即時監聽
+            $("#reg_tel").bind("input propertychange", function () {
+                if ($(this).val().length < 10) {
+                    $("#reg_tel").addClass("is-invalid");
+                    $("#reg_tel").removeClass("is-valid");
+                    flag_tel = false;
+                } else if ($(this).val().length == 10) {
+                    $("#reg_tel").removeClass("is-invalid");
+                    $("#reg_tel").addClass("is-valid");
+                    flag_tel = true;
+                }
+            });
+
+            //使用者e-mail 即時監聽
+            $("#reg_email").bind("input propertychange", function () {
+                if ($(this).val().length > 5 && $(this).val().length < 21) {
+                    $("#reg_email").removeClass("is-invalid");
+                    $("#reg_email").addClass("is-valid");
+                    flag_email = true;
+                } else {
+                    $("#reg_email").removeClass("is-valid");
+                    $("#reg_email").addClass("is-invalid");
+                    flag_email = false;
+                }
+            });
+
+            //使用者會員守則 即時監聽
+            $("#mem_check01").bind("input propertychange", function () {
+                var check01 = [];
+                $.each($("input[name='mem_check01']:checked"), function () {
+                    check01.push($(this).val());
+                });
+                console.log(check01);
+                if (check01.length == 1) {
+                    console.log("遵守");
+                    flag_check01 = true;
+                } else {
+                    console.log("不遵守");
+                    flag_check01 = false;
+                }
+            });
+
+            //使用者登入按鈕
+            $("#login_btn").bind("click", function () {
+                var jsonData = {};
+                jsonData["username"] = $("#login_username").val();
+                jsonData["password"] = $("#login_password").val();
+                console.log(JSON.stringify(jsonData));
+                $.ajax({
+                    type: "POST",
+                    url: "Su_mem_login_api.php",
+                    data: JSON.stringify(jsonData),
+                    dataType: "json",
+                    success: showdata_Sulogin,
+                    error: function () {
+                        alert("error-Su_mem_login_api.php");
+                    }
+                });
+            });
+
+            //登出按鈕s2_logout_btn監聽
+            $("#s2_logout_btn").bind("click", function () {
+                console.log("test");
+                setCookie("UID01", "", 7);
+                setCookie("UID02", "", 7);
+                setCookie("UID03", "", 7);
+                location.href = "plant.SPA.html";
+            });
+
+            //渲染縣市選單
+            city.forEach(function (item) {
+                var strHTML = '<option value="' + item.CityName + '">' + item.CityName + '</option>';
+                $("#reg_city").append(strHTML);
+            });
+
+            //取得網址參數
+            var urlParams = new URLSearchParams(window.location.search);
+            var username = urlParams.get('username');
+
+            //管理者會員中心
+            var mySLink = document.getElementById('main');
+            mySLink.href = 'control_member.html?username=' + username;
+        });
+
+        //管理者註冊
+        function showdata_reg(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "plant.SPA.html";
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //管理者帳號確認
+        function showdata_check_one(data) {
+            console.log(data);
+            if (data.state) {
+                //該帳號不存在，帳號可以使用
+                $("#Sureg_valid-feedback").text("該帳號不存在，帳號可以使用");
+                $("#Sureg_username").removeClass("is-invalid");
+                $("#Sureg_username").addClass("is-valid");
+                flag_username = true;
+            } else {
+                //該帳號已存在，帳號不可以使用
+                $("#SuSureg_invalid-feedback").text("該帳號已存在，帳號不可以使用");
+                $("#Sureg_username").removeClass("is-valid");
+                $("#Sureg_username").addClass("is-invalid");
+                flag_username = false;
+            }
+        }
+
+        //管理者登入
+        function showdata_login(data) {
+            console.log(data);
+            if (data.state) {
+
+                // alert(data.message);
+                // location.href="mem_control_panel.html";
+                console.log(data.data[0].UserState);
+                console.log(data.data[0].UID01);
+                console.log(data.data[0].UID02);
+                console.log(data.data[0].UID03);
+
+                //將帳號加到網址後方
+                var username = data.data[0].Username;
+
+                // 將使用者名添加到URL後面
+                var searchParams = new URLSearchParams(window.location.search);
+                //window.location.search 取得目前造訪網頁 qeuery 參數，比如 ?a=test
+                searchParams.set('username', username);
+                // window.location.pathname 取得目前造訪網頁的路徑(path)
+                var newurl = window.location.pathname + '?' + searchParams.toString();
+                window.location.href = newurl;
+
+                username_plus();
+
+                //把UID存入cookie(這個UID每次登入時都會改變)
+                setCookie("UID01", data.data[0].UID01, 7);
+                setCookie("UID02", data.data[0].UID02, 7);
+                setCookie("UID03", data.data[0].UID03, 7);
+
+                //顯示會員相關訊息
+                $("#Sulogin_member").text(data.data[0].Username + "會員您好!");
+
+                //隱藏登入與註冊按鈕
+                $("#s2_login_btn").hide();//hide()即是把它給隱藏起來
+                $("#s2_reg_btn").hide();
+                $("#s2_Sulogin_btn").hide();
+
+                //顯示登出按鈕
+                $("#s2_logout_btn").show();
+
+                //登入的背景顏色改變 
+                $("body").removeClass();//要先移除才能使用新的程式
+                $("body").css("background-color", "#CBC6B6");
+
+                //顯示會員vip功能選單
+                $("#dropdown").removeClass("disabled");
+                // $("#learning").removeClass("disabled");
+                $("#link").show();
+                $("#link_control").show();
+                $("#link_control01").show();
+                $("#link_control02").show();
+                $("#link_control03").show();
+                $("#link_control04").show();
+                $("#link_control05").show();
+                $("#maskmap").show();
+                $("#memberonly").show();
+                $("#restaurantmap").show();
+                $("#todolist").show();
+                $("#s06").show();
+                $("#s09").show();
+
+                //顯示權限按鈕
+                $("#premission").show();
+
+                //需要有兩個=才行,若只有一個=就是為恆等於，其所設的數值都不會改變
+                if (data.data[0].UserState == "y") {
+                    // location.href="mem_control_panel.html";
+                    // $("#link_control").show();
+                    $("#premission").css("color", "#8dbd95");
+                    $("#Sulogin_member").css("color", "#e7dba6");
+                } else {
+                    alert("帳號已被停權");
+                    $("#premission").css("color", "#e7aaa6");
+                    $("#Sulogin_member").css("color", "#BEBEBE");
+                }
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //管理者UID check
+        function showdata_uid_check(data) {
+            console.log(data);
+            if (data.state) {
+                username_plus();
+
+                //將URL中的查詢參數解析為javascript中的對象
+                var currentParams = {};//宣告陣列來儲存參數
+                var currentUrl = window.location.href;//現在目前的網址
+                // 使用正規表達式(替換使用)
+                // /?&]+： URL 中的問號（?）或者連接符號（&），表示這些符號可能出現一次或多次。
+                // ([^=&]+)：查詢參數的名稱，即等號（=）之前的部分。這個子表達式使用了否定字符集（[^=&]），表示除了等號和連接符號以外的任意字符，並且要求這些字符至少出現一次（+）。
+                // =([^&]*)：查詢參數的值，即等號（=）之後的部分。這個子表達式使用了否定字符集（[^&]），表示匹配除了連接符號以外的任意字符，並且要求這些字符出現零次或多次（*）
+                // gi：正則表達式的標誌，表示匹配時忽略大小寫（i），並且匹配所有符合的子串（g）。
+                var currentParts = currentUrl.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                    //m為match是整個匹配到的字串
+                    currentParams[key] = value;
+                    console.log(value);//會顯示帳號名
+                });
+                //網址username對應到的值
+                var loadedParams = { username: data.data[0].Username };//直接寫成陣列來判斷
+
+                //判斷是否已重新載入（需要將以上陣列轉字串）
+                if (JSON.stringify(currentParams) === JSON.stringify(loadedParams)) {
+                    console.log('已重新載入');
+                } else {
+                    location.href = 'plant.SPA.html?username=' + data.data[0].Username;
+                    console.log('第一次載入');
+                }
+
+                //UID驗證合法
+                //顯示會員相關訊息
+                $("#Sulogin_member").text(data.data[0].Username + "會員您好!");
+
+                //隱藏登入與註冊按鈕
+                $("#s2_login_btn").hide();//hide()即是把它給隱藏起來
+                $("#s2_reg_btn").hide();
+                $("#s2_Sulogin_btn").hide();
+
+                //顯示登出按鈕
+                $("#s2_logout_btn").show();
+
+                //登入的背景顏色改變 
+                $("body").removeClass();//要先移除才能使用新的程式
+                $("body").css("background-color", "#CBC6B6");
+
+                //顯示會員vip功能選單
+                $("#dropdown").removeClass("disabled");
+                // $("#learning").removeClass("disabled");
+                $("#link").show();
+                $("#link_control").show();
+                $("#link_control01").show();
+                $("#link_control02").show();
+                $("#link_control03").show();
+                $("#link_control04").show();
+                $("#link_control05").show();
+                $("#maskmap").show();
+                $("#memberonly").show();
+                $("#restaurantmap").show();
+                $("#todolist").show();
+                $("#s06").show();
+                $("#s09").show();
+                $("#main").show();
+                $("#link_control").hide();
+
+                //顯示權限按鈕
+                $("#premission").show();
+
+                if (data.data[0].UserState == "y") {
+                    // location.href="mem_control_panel.html";
+                    // $("#link_control").show();
+                    $("#premission").css("color", "#8dbd95");
+                    $("#Sulogin_member").css("color", "#e7dba6");
+                } else {
+                    alert("帳號已被停權");
+                    $("#premission").css("color", "#e7aaa6");
+                    $("#Sulogin_member").css("color", "#BEBEBE");
+                }
+            }
+        }
+
+        //管理者分機確認
+        function showdata_ext_check_one(data) {
+            console.log(data);
+            if (data.state) {
+                //該分機不存在，可以使用
+                $("#Sureg_ext_valid-feedback").text("分機不存在，可以使用");
+                $("#Sureg_ext").removeClass("is-invalid");
+                $("#Sureg_ext").addClass("is-valid");
+                flag_ext = true;
+            } else {
+                //該分機已存在，不可以使用
+                $("#Sureg_ext_invalid-feedback").text("分機已有人使用");
+                $("#Sureg_ext").removeClass("is-valid");
+                $("#Sureg_ext").addClass("is-invalid");
+                if (data.message == "欄位不得為空白") {
+                    $("#Sureg_ext_invalid-feedback").text("分機輸入錯誤");
+                    $("#Sureg_ext").removeClass("is-valid");
+                    $("#Sureg_ext").addClass("is-invalid");
+                }
+                flag_ext = false;
+            }
+        }
+
+        //使用者註冊
+        function showdata_Sureg(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "plant.SPA.html";
+
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //使用者帳號確認
+        function showdata_Sucheck_one(data) {
+            console.log(data);
+            if (data.state) {
+                //該帳號不存在，帳號可以使用
+                $("#reg_valid-feedback").text("該帳號不存在，帳號可以使用");
+                $("#reg_username").removeClass("is-invalid");
+                $("#reg_username").addClass("is-valid");
+                flag_username = true;
+            } else {
+                //該帳號已存在，帳號不可以使用
+                $("#reg_invalid-feedback").text("該帳號已存在，帳號不可以使用");
+                $("#reg_username").removeClass("is-valid");
+                $("#reg_username").addClass("is-invalid");
+                flag_username = false;
+            }
+        }
+
+        //使用者登入
+        function showdata_Sulogin(data) {
+            console.log(data);
+            if (data.state) {
+                // alert(data.message);
+                // location.href="mem_control_panel.html";
+                console.log(data.data[0].Username);
+                console.log(data.data[0].UserState);
+                console.log(data.data[0].UID01);
+                console.log(data.data[0].UID02);
+
+                username_plus();
+                //把UID存入cookie(這個UID每次登入時都會改變)
+                setCookie("UID01", data.data[0].UID01, 7);
+                setCookie("UID02", data.data[0].UID02, 7);
+
+                //將帳號加到網址後方
+                var username = data.data[0].Username;
+
+                // 將使用者名添加到URL後面
+                var searchParams = new URLSearchParams(window.location.search);
+                //window.location.search 取得目前造訪網頁 qeuery 參數，比如 ?a=test
+                searchParams.set('username', username);
+                // window.location.pathname 取得目前造訪網頁的路徑(path)
+                var newurl = window.location.pathname + '?' + searchParams.toString();
+                window.location.href = newurl;
+
+                //顯示會員相關訊息
+                $("#login_member").text(data.data[0].Username + "會員您好!");
+
+                //隱藏登入與註冊按鈕
+                $("#s2_login_btn").hide();//hide()即是把它給隱藏起來
+                $("#s2_reg_btn").hide();
+                $("#s2_Sulogin_btn").hide();
+
+                //顯示登出按鈕
+                $("#s2_logout_btn").show();
+
+                //登入的背景顏色改變 
+                $("body").removeClass();//要先移除才能使用新的程式
+                $("body").css("background-color", "#CBC6B6");
+
+                //顯示會員vip功能選單
+                $("#dropdown").removeClass("disabled");
+                // $("#learning").removeClass("disabled");
+                $("#link_control").show();
+                $("#link_control01").show();
+                $("#link_control02").show();
+                $("#link_control03").show();
+                $("#link_control04").show();
+                $("#link_control05").show();
+                $("#maskmap").show();
+                $("#memberonly").show();
+                $("#todolist").show();
+                $("#s06").show();
+                $("#s09").show();
+
+                //顯示權限按鈕
+                $("#premission").show();
+
+                //需要有兩個=才行,若只有一個=就是為恆等於，其所設的數值都不會改變
+                if (data.data[0].UserState == "y") {
+                    // location.href="mem_control_panel.html";
+                    // $("#link_control").show();
+                    $("#premission").css("color", "#8dbd95");
+                    $("#login_member").css("color", "#e7dba6");
+                } else {
+                    alert("帳號已被停權");
+                    $("#premission").css("color", "#e7aaa6");
+                    $("#login_member").css("color", "#BEBEBE");
+                }
+                if (data.data[0].Username == "demomap") {
+                    $("#restaurantmap").show();
+                }
+            } else {
+                alert(data.message);
+            }
+        }
+
+        //使用者UID check
+        function showdata_Suuid_check(data) {
+            console.log(data);
+            if (data.state) {
+                //UID驗證合法
+                //顯示會員相關訊息
+                $("#login_member").text(data.data[0].Username + "會員您好!");
+
+                //將URL中的查詢參數解析為javascript中的對象
+                var currentParams = {};//宣告陣列來儲存參數
+                var currentUrl = window.location.href;//現在目前的網址
+                // 使用正規表達式(替換使用)
+                // /?&]+： URL 中的問號（?）或者連接符號（&），表示這些符號可能出現一次或多次。
+                // ([^=&]+)：查詢參數的名稱，即等號（=）之前的部分。這個子表達式使用了否定字符集（[^=&]），表示除了等號和連接符號以外的任意字符，並且要求這些字符至少出現一次（+）。
+                // =([^&]*)：查詢參數的值，即等號（=）之後的部分。這個子表達式使用了否定字符集（[^&]），表示匹配除了連接符號以外的任意字符，並且要求這些字符出現零次或多次（*）
+                // gi：正則表達式的標誌，表示匹配時忽略大小寫（i），並且匹配所有符合的子串（g）。
+                var currentParts = currentUrl.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                    //m為match是整個匹配到的字串
+                    currentParams[key] = value;
+                    console.log(value);//會顯示帳號名
+                });
+                //網址username對應到的值
+                var loadedParams = { username: data.data[0].Username };//直接寫成陣列來判斷
+
+                //判斷是否已重新載入（需要將以上陣列轉字串）
+                if (JSON.stringify(currentParams) === JSON.stringify(loadedParams)) {
+                    console.log('已重新載入');
+                } else {
+                    location.href = 'plant.SPA.html?username=' + data.data[0].Username;
+                    console.log('第一次載入');
+                }
+                username_plus();
+
+                //隱藏登入與註冊按鈕
+                $("#s2_login_btn").hide();//hide()即是把它給隱藏起來
+                $("#s2_reg_btn").hide();
+                $("#s2_Sulogin_btn").hide();
+
+                //顯示登出按鈕
+                $("#s2_logout_btn").show();
+
+                //登入的背景顏色改變 
+                $("body").removeClass();//要先移除才能使用新的程式
+                $("body").css("background-color", "#CBC6B6");
+
+                //顯示會員vip功能選單
+                $("#dropdown").removeClass("disabled");
+                // $("#learning").removeClass("disabled");
+                $("#link_control").show();
+                $("#link_control01").show();
+                $("#link_control02").show();
+                $("#link_control03").show();
+                $("#link_control04").show();
+                $("#link_control05").show();
+                $("#maskmap").show();
+                $("#memberonly").show();
+                $("#todolist").show();
+                $("#s06").show();
+                $("#s09").show();
+
+                //顯示權限按鈕
+                $("#premission").show();
+
+                if (data.data[0].UserState == "y") {
+                    // location.href="mem_control_panel.html";
+                    // $("#link_control").show();
+                    $("#premission").css("color", "#8dbd95");
+                    $("#login_member").css("color", "#e7dba6");
+                } else {
+                    alert("帳號已被停權");
+                    $("#premission").css("color", "#e7aaa6");
+                    $("#login_member").css("color", "#BEBEBE");
+                }
+
+                //設定只有demomap這個人能看到地圖的權限
+                if (data.data[0].Username == "demomap") {
+                    $("#restaurantmap").show();
+                }
+            }
+        }
+
+        //from w3school
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));//使用毫秒
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+
+</html>

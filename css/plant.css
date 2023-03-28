@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap');
+:root{
+    --bgc:#F2F0EA;
+    --c_bgc:#E5E0CE;
+    --myplant:#CBC6B6;
+    --plant_cbtn:#8AAE7E;
+    --footer_bgc:#CDB897;
+    --font01:#8D8686;
+    --font02:#4B4B4B;
+    --font03:#342525;
+    --font04:#997210;
+    --font05:#b89a4e;
+    --home_font:#533C04;
+    --btn:#F8F3E9;
+    --save_btn:#AFCEA4;
+    --cancel_btn:#A4C7CE;
+    --home_btn:#A3A0A0;
+    --home_btn_hover:#836c6c;
+    --place:#BEBEBE;
+    --black:#222020;
+    --white:#FDFDFD;
+    --img_bgc:#eae7e7;
+    --ig:#5c3264;
+    --social:#bba978;
+    --navbar:#4d4223;
+    --seed:#8ec297;
+    --rule:#ece8da;
+    --leaf:#55855d;
+    --deep_leaf:#243d28;
+    --orange:#cfa955;
+    --blue:#8da5e9;
+    --red:#d66f67;
+    --light_red:#e7aaa6;
+    --yellow:#e7dba6;
+    --light_leaf:#8dbd95;
+    --favred:#c2a6a4;
+    --member_bgc:#DAEBF0;
+    --mcc:#F6FFF3;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Kaisei Opti';
+    font-size: 22px;
+    font-weight: 500;
+}
+.bg-cover{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.home_btn{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--home_btn);
+    background-image: url(../imgs/home_btn.png);
+    background-position: center center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+.bgc_box{
+    background-color: var(--white);
+    width:1500px;
+    height: 100vh;
+}
+.banner nav {
+    background-color: var(--white);
+    text-align: center;
+    width: 750px;
+    height: 10vh;
+    line-height: 3vh;
+    padding-bottom: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    opacity: 80%;
+    margin-bottom: 20px;
+}
+
+.banner ul {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.banner ul li {
+    list-style-type: none;
+    float: left;
+    margin-bottom: 20%;
+}
+
+.banner ul li a {
+    display: block;
+    padding: 0 15px;
+    color: var(--font01);
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.save_btn{
+    background-color: var(--save_btn);
+    display: block;
+    color:var(--black);
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px 2px var(--black);
+}
+.cancel_btn{
+    background-color: var(--cancel_btn);
+    display: block;
+    color:var(--black);
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: center;
+    width: 300px;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 2px 2px 10px 2px var(--black);
+}
+.footer{
+    background-color: var(--footer_bgc);
+    text-align:start;
+    font-size: 22px;
+    height: 120px;
+}
+.footer a{
+    text-decoration: none;
+    color:var(--font04);
+    line-height: 95px;
+}
+.footer p{
+    text-align:end;
+    font-size: 20px;
+    margin-left: auto;
+}
+.footer i{
+    color: var(--home_font);
+    line-height: 100px;
+    font-size:30px;
+}
+.wrapper {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+@media screen and (max-width:1024px) {
+    .wrapper {
+        width: 80%;
+    }
+    .footer{
+        width: 100%;
+    }
+}
+.content {
+    background-color: var(--white);
+    padding: 30px 50px;
+    text-align: center;
+}
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-700{
+    font-weight: 700;
+}
+.plant {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--img_bgc);
+    margin: 0 auto;
+    border: 0.5px solid var(--black);
+    box-shadow: 2px 2px 10px 2px var(--black);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.box{
+    border: 5px solid var(--navbar);
+    border-radius: 5%;
+    background-color: var(--rule);
+    box-shadow: 2px 2px 10px 2px var(--black);
+}
