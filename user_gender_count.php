@@ -23,6 +23,5 @@
         }else{
             echo '{"state": false, "message":"會員性別統計失敗!'.mysqli_error($link).'"}';
         }
-
-       
+         
 ?>

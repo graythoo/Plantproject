@@ -384,26 +384,7 @@
                     location.href = 'plant.html?username='+data.data[0].Username;
                     console.log('第一次載入');
                 }
-                //uid驗證成功
-                //顯示會員帳號相關訊息(藉由網址判斷)
-                // if (username == data.data[0].Username) {
-                //     $.ajax({
-                //         type: "GET",
-                //         url: "plant_R_api.php?username=" + username,
-                //         dataType: "json",
-                //         async: false,
-                //         success: showdata,
-                //         error: function () {
-                //             alert("error-plant_R_api.php");
-                //         }
-                //     });
-                // } else {
-                //     alert("您尚未登入,請先登入或註冊");
-                //     location.href = "plant.SPA.html";
-                //     setCookie("UID01", "", 7);
-                //     setCookie("UID02", "", 7);
-                // }
-
+                
                 if (data.data[0].UserState == "y") {
                     //帳號為啟用狀態
                     $("#login_member").text(data.data[0].Username + "會員您好!");

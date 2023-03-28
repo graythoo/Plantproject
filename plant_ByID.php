@@ -14,10 +14,6 @@
             $username = "owner";
             $password = "Pt//12345678";
             $dbname = "plantdb";
-            // $servername = "localhost";
-            // $username = "id19936093_owner";
-            // $password = "Pt//12345678";
-            // $dbname = "id19936093_plantdb";
 
             $conn = mysqli_connect($servername,$username,$password,$dbname);
 

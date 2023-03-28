@@ -1,8 +1,4 @@
 <?php
-    // $servername = "localhost";
-    // $username = "id19936093_owner";
-    // $password = "Pt//12345678";
-    // $dbname = "id19936093_plantdb";
     $servername = "127.0.0.1";
     $username = "owner";
     $password = "Pt//12345678";
