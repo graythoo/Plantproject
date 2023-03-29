@@ -273,22 +273,22 @@
             //會員總數
             $.ajax({
                 type: "GET",
-                url: "plant_mem_user_const_api.php",
+                url: "Suser_totalconst_api.php",
                 dataType: "json",
                 success: showdata_totalmember,
                 error: function () {
-                    alert("error-plant_mem_user_const_api.php");
+                    alert("error-Suser_totalconst_api.php");
                 }
             });
 
             //會員狀態總數
             $.ajax({
                 type: "GET",
-                url: "plant_mem_count_state.php",
+                url: "Suser_count_state.php",
                 dataType: "json",
                 success: showdata_count_state,
                 error: function () {
-                    alert("error-plant_mem_count_state.php");
+                    alert("error-Suser_count_state.php");
                 }
             });
 
