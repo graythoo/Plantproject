@@ -23,6 +23,7 @@
     <h1>未做部分</h1>
     <ul>
         <li>植物日記CRUD(多重檔案上傳)</li>
+        <p>大致上的樣式如下圖:</p>
         <img src="imgs/daily_upload.JPG" width="100">
         <li>種植小知識</li>
         <li>後臺管理-合作對象</li>
