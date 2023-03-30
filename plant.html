@@ -152,8 +152,8 @@
                 <div class="row" id="myplant">
                     <div class="col-md-4 card-rwd">
                         <div class="card mb-3" style="background-color: var(--rule);">
-                            <div id="myplant_img" class="bg-cover"
-                                style="background-image: url(imgs/travel-3.jpg);height: 30vh;"></div>
+                            <div id="myplant_img" class="bg-cover rounded-top"
+                                style="background-image: url(imgs/plant04.jpg);height: 30vh;"></div>
                             <div class="card-body">
                                 <h3 class="card-title">牽牛花</h3>
                                 <div class="card-text">
@@ -420,7 +420,7 @@
                     $("#manyplant").html(str);
                 }
                 for (var i = 0; i < data.data.length; i++) {
-                    var strHTML = '<div class="col-md-4 card-rwd mt-3"><div class="card mb-3" style="background-color: var(--rule);"><div id="myplant_img" class="bg-cover" style="background-image: url(' + data.data[i]["Pic_path"] + ');height: 30vh;" ></div><div class="card-body"><h3 class="card-title fw-700" style="color: var(--deep-green);" >' + data.data[i]["Pname"] + '</h3><div class="card-text"><p class="text-start">開始種植:' + data.data[i]["Pdate"] + ' </p><p class="text-start">種了幾株:' + data.data[i]["Pnum"] + '株</p></div><a href="plant_U.html?username=' + data.data[i]["Username"] + '&id=' + data.data[i]["ID"] + '" target="_blank" class="btn btn-primary" data-id="' + data.data[i]["ID"] + '" data-username="' + data.data[i]["Username"] + '" data-image="' + data.data[i]["Pic_path"] + '" id="update_btn">更新</a><button class="btn btn-outline-danger ms-2" data-id="' + data.data[i]["ID"] + '" data-username="' + data.data[i]["Username"] + '" data-image="' + data.data[i]["Pic_path"] + '" id="delete_btn">刪除</button></div></div></div>';
+                    var strHTML = '<div class="col-md-4 card-rwd mt-3"><div class="card mb-3" style="background-color: var(--rule);"><div id="myplant_img" class="bg-cover  rounded-top" style="background-image: url(' + data.data[i]["Pic_path"] + ');height: 30vh;" ></div><div class="card-body"><h3 class="card-title fw-700" style="color: var(--deep-green);" >' + data.data[i]["Pname"] + '</h3><div class="card-text"><p class="text-start">開始種植:' + data.data[i]["Pdate"] + ' </p><p class="text-start">種了幾株:' + data.data[i]["Pnum"] + '株</p></div><a href="plant_U.html?username=' + data.data[i]["Username"] + '&id=' + data.data[i]["ID"] + '" target="_blank" class="btn btn-primary" data-id="' + data.data[i]["ID"] + '" data-username="' + data.data[i]["Username"] + '" data-image="' + data.data[i]["Pic_path"] + '" id="update_btn">更新</a><button class="btn btn-outline-danger ms-2" data-id="' + data.data[i]["ID"] + '" data-username="' + data.data[i]["Username"] + '" data-image="' + data.data[i]["Pic_path"] + '" id="delete_btn">刪除</button></div></div></div>';
 
                     $("#myplant").append(strHTML);
 
