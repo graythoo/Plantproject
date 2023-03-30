@@ -1,3 +1,5 @@
+//su->super
+//僅用於管理員的後臺管理系統驗證
 function check_member_stste(){
     //利用cookie uid確認登入狀態
     if (getCookie("UID01") != "" && getCookie("UID02") != "" && getCookie("UID03") != "") {

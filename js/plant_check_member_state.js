@@ -1,7 +1,7 @@
 //確認會員登入狀態
 //會員名稱 設定為 #login_member
 //登出按鈕 設定為 #logout_btn
-
+//用於管理者及使用者的驗證(全部)
 
 function check_member_state(){
     //利用cookie uid確認登入狀態
