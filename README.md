@@ -20,11 +20,22 @@
             </ul>
         </ul>
     </ul>
-    <h1>未做部分</h1>
+    <h1>功能展示</h1>
     <ul>
-        <li>植物日記CRUD(多重檔案上傳)</li>
-        <p>大致上的樣式如下圖:</p>
-        <img src="imgs/daily_upload.JPG" width="100">
-        <li>種植小知識</li>
-        <li>後臺管理-合作對象</li>
+        <li>首頁</li>
+        <img src="imgs/main.JPG" width="500">
+        <img src="imgs/login.JPG" width="250">
+        <img src="imgs/reg.JPG" width="250">
+    </ul>
+    <ul>
+        <li>我的植物</li>
+        <img src="imgs/myplant.JPG" width="500">
+    </ul>
+    <ul>
+        <li>新增植物</li>
+        <img src="imgs/newplant.JPG" width="500">
+    </ul>
+    <ul>
+        <li>餐飲資料地圖</li>
+        <img src="imgs/Restaurantmap.JPG" width="500">
     </ul>
