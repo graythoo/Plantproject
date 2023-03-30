@@ -45,8 +45,7 @@
             <li>
                 <h3>餐飲地圖</h3>
             </li>
-            <a href="https://data.gov.tw/dataset/7779">引用政府資料開放平臺- 餐飲 - 觀光資訊資料庫</a>
-            
+            <a href="https://data.gov.tw/dataset/7779">引用政府資料開放平臺- 餐飲 - 觀光資訊資料庫</a><br>  
             <img src="imgs/restaurantmap.jpg" width=500">
         </ul>
         <li><h3>管理者</h3></li>
