@@ -20,3 +20,15 @@
             </ul>
         </ul>
     </ul>
+    <h1>內容展示</h1>
+    <ul>
+        <li><h3>首頁</h3></li>
+        <img src="imgs/main.jpg" width="500">
+        <li><h3>登入及註冊畫面</h3></li>
+        <img src="imgs/reg.jpg" width=250">
+        <img src="imgs/login.jpg" width=250">
+        <li><h3>新增植物</h3></li>
+        <img src="imgs/newplant.jpg" width=500">
+        <li><h3>種植小知識</h3></li>
+        <img src="imgs/info.jpg" width=500">
+    </ul>
