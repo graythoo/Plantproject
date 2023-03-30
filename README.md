@@ -3,8 +3,8 @@
     <ul>
         <li>使用者</li>
         <ul>
-            <li>新增植物</li>
-            <li>我的植物</li>
+            <li>新增植物(C)</li>
+            <li>我的植物(RUD)</li>
             <li>餐飲、口罩地圖</li>
             <li>代辦事項</li>
         </ul>
@@ -22,13 +22,26 @@
     </ul>
     <h1>內容展示</h1>
     <ul>
-        <li><h3>首頁</h3></li>
-        <img src="imgs/main.jpg" width="500">
-        <li><h3>登入及註冊畫面</h3></li>
-        <img src="imgs/reg.jpg" width=250">
-        <img src="imgs/login.jpg" width=250">
-        <li><h3>新增植物</h3></li>
-        <img src="imgs/newplant.jpg" width=500">
-        <li><h3>種植小知識</h3></li>
-        <img src="imgs/info.jpg" width=500">
+        <li><h3>使用者</h3></li>
+        <ul>
+            <li>
+                <h3>首頁</h3>
+            </li>
+            <pre>
+                <code>
+                    未登入：出現警示訊息未登入，無法紀錄植物<br>
+                    已登入（啟用）：記錄我的植物列表、口罩地圖、待辦事項皆可使用<br>
+                    已登入（停權）：不得新增植物、會員中心顯示停權且不得修改<br>
+                </code>
+            </pre>
+            <img src="imgs/main.jpg" width="500">
+            <li>
+                <h3>新增植物</h3>
+            </li>
+            <img src="imgs/newplant.jpg" width=500">
+            <li>
+                <h3>種植小知識</h3>
+            </li>
+            <img src="imgs/info.jpg" width=500">
+        </ul>
     </ul>
