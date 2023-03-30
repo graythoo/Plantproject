@@ -3,7 +3,13 @@
         $link = create_connect();
         
         //SQL語法中的Group by 意思就是說，欄位內的資料若有不只一筆名稱相同的資料的話，就會把它們作為群組。
-        $sql = "SELECT COUNT(UserState) as num,UserState FROM user GROUP BY UserState";
+        $sql = "SELECT COUNT(UserState) as num,UserState FROM user 
+        GROUP BY UserState 
+        ORDER BY 
+        CASE UserState 
+            WHEN 'y' THEN 1
+            WHEN 'n' THEN 2
+        END";
            
         $result = execute_sql($link, "plantdb", $sql);
     
