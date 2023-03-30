@@ -42,5 +42,28 @@
             </li>
              <div class="position-relative overflow-auto"><pre><code>共有五大類之植物知識(目前暫無進階功能)</code></pre></div>
             <img src="imgs/info.jpg" width=500">
+            <li>
+                <h3>餐飲地圖</h3>
+            </li>
+            <a href="https://data.gov.tw/dataset/7779">引用政府資料開放平臺- 餐飲 - 觀光資訊資料庫</a>
+            <img src="imgs/restaurantmap.jpg" width=500">
         </ul>
+        <li><h3>管理者</h3></li>
+            <ul>
+                <li>
+                <h3>使用者資料</h3>
+                </li>
+                 <div class="position-relative overflow-auto"><pre><code>可看到全部使用者的資料且可停權、啟用、修改、刪除（除了密碼以外）</code></pre></div>
+                <img src="imgs/user.jpg" width=500">
+                <li>
+                <h3>數據分析</h3>
+                </li>
+                 <div class="position-relative overflow-auto"><pre><code>會員相關資料分析（包括會員總數、狀態、性別、居住地、植物數量和總數）</code></pre></div>
+                <img src="imgs/userdata.jpg" width=500"> 
+                <li>
+                <h3>會員種植資料</h3>
+                </li>
+                 <div class="position-relative overflow-auto"><pre><code>包括所有會員的植物資料和植物名字、澆花時間、放置地點之報表分析</code></pre></div>
+                <img src="imgs/data.jpg" width=500"> 
+            </ul>
     </ul>
