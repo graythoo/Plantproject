@@ -27,21 +27,20 @@
             <li>
                 <h3>首頁</h3>
             </li>
-            <pre>
-                <code>
-                    未登入：出現警示訊息未登入，無法紀錄植物<br>
-                    已登入（啟用）：記錄我的植物列表、口罩地圖、待辦事項皆可使用<br>
-                    已登入（停權）：不得新增植物、會員中心顯示停權且不得修改<br>
-                </code>
-            </pre>
+            <div class="position-relative overflow-auto"><pre><code>未登入：出現警示訊息未登入，無法紀錄植物  
+已登入（啟用）：記錄我的植物列表、口罩地圖、待辦事項皆可使用  
+已登入（停權）：不得新增植物、會員中心顯示停權且不得修改
+</code></pre></div>
             <img src="imgs/main.jpg" width="500">
             <li>
                 <h3>新增植物</h3>
             </li>
+             <div class="position-relative overflow-auto"><pre><code>共有圖片、種植日期、名字、數量、地點、澆花日期、時間、描述等8個欄位</code></pre></div>
             <img src="imgs/newplant.jpg" width=500">
             <li>
                 <h3>種植小知識</h3>
             </li>
+             <div class="position-relative overflow-auto"><pre><code>共有五大類之植物知識(目前暫無進階功能)</code></pre></div>
             <img src="imgs/info.jpg" width=500">
         </ul>
     </ul>
