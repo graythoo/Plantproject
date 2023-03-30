@@ -1,4 +1,4 @@
- <h1><p align="center">植物紀錄網站</p></h1>
+ <!-- <h1><p align="center">植物紀錄網站</p></h1>
     <h1>網頁功能</h1>
     <ul>
         <li>使用者</li>
@@ -23,7 +23,8 @@
     <h1>未做部分</h1>
     <ul>
         <li>植物日記CRUD(多重檔案上傳)</li>
+        <img src="imgs/daily_upload.JPG" width = "100" height = "150">
         <li>種植小知識</li>
         <li>後臺管理-合作對象</li>
-    </ul>
+    </ul> -->
 
