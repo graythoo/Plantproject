@@ -1,4 +1,4 @@
-<h1><p align="center">植物紀錄網站</p></h1>
+<p align="center"><h1>植物紀錄網站</h1></p>
 <h5>上傳日期:2023/03/30</h5>
 <h5>程式語言:javascript、html、css、jquery、bootstrap、Vue</h5>
     <h1>網頁功能</h1>
