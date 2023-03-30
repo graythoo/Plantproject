@@ -49,6 +49,10 @@
             <img src="imgs/restaurantmap.jpg" width=500">
         </ul>
         <li><h3>管理者</h3></li>
+        <div class="position-relative overflow-auto"><pre><code>未登入：出現警示訊息未登入，無法紀錄植物也無法進入後台管理  
+已登入（啟用）：記錄我的植物列表、口罩、餐飲地圖、待辦事項皆可使用，也可使用後台管理系統的全部頁面  
+已登入（停權）：會員中心顯示停權且不得修改、因停權無法進入後台管理系統
+</code></pre></div>
             <ul>
                 <li>
                 <h3>使用者資料</h3>
@@ -64,6 +68,6 @@
                 <h3>會員種植資料</h3>
                 </li>
                  <div class="position-relative overflow-auto"><pre><code>包括所有會員的植物資料和植物名字、澆花時間、放置地點之報表分析</code></pre></div>
-                <img src="imgs/data.jpg" width=500"> 
+                <img src="imgs/plantdata.jpg.jpg" width=500"> 
             </ul>
     </ul>
