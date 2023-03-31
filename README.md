@@ -37,8 +37,11 @@
             </li>
              <div class="position-relative overflow-auto"><pre><code>共有圖片、種植日期、名字、數量、地點、澆花日期、時間、描述等8個欄位</code></pre></div>
             <img src="imgs/newplant.jpg" width=500">
+<<<<<<< HEAD
             <img src="imgs/login.jpg" width=250">
             <img src="imgs/reg.jpg" width=250">
+=======
+>>>>>>> 7c6a07423777bbb0a18a79b04598bc268ecb6b1b
             <li>
                 <h3>種植小知識</h3>
             </li>
