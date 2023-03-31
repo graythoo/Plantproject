@@ -36,7 +36,7 @@
                 <h3>新增植物</h3>
             </li>
              <div class="position-relative overflow-auto"><pre><code>共有圖片、種植日期、名字、數量、地點、澆花日期、時間、描述等8個欄位</code></pre></div>
-            <img src="imgs/newplant.jpg" width=500">
+            <img src="imgs/newplant.jpg" width=500"><br>
             <img src="imgs/login.jpg" width=250">
             <img src="imgs/reg.jpg" width=250">
             <li>
