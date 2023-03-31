@@ -32,14 +32,14 @@
 已登入（停權）：不得新增植物、會員中心顯示停權且不得修改
 </code></pre></div>
             <img src="imgs/main.jpg" width="500">
+            <br>
+            <img src="imgs/login.jpg" width=250">
+            <img src="imgs/reg.jpg" width=250">
             <li>
                 <h3>新增植物</h3>
             </li>
              <div class="position-relative overflow-auto"><pre><code>共有圖片、種植日期、名字、數量、地點、澆花日期、時間、描述等8個欄位</code></pre></div>
             <img src="imgs/newplant.jpg" width=500">
-             <br>
-            <img src="imgs/login.jpg" width=250">
-            <img src="imgs/reg.jpg" width=250">
             <li>
                 <h3>種植小知識</h3>
             </li>
