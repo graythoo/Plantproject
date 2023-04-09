@@ -23,7 +23,7 @@
    <h1>技術內容</h1>
     <ul>
         <li>首頁</li>
-        <ol>
+        <ul>
             <li>使用ajax實現登入及註冊功能以及串接全台各縣市鄉鎮的API</li>
             <li>使用cookies留存登入資料</li>
             <li>將登入的帳號加在網址後方以實現使用者觀看的獨特性，如:首頁網址＋?username=xxxxx</li>
@@ -31,21 +31,21 @@
             <li>使用wow.js、Font Awesome及Animate.css製作視覺效果</li>
             <li>使用sweetalert提示未登入網頁</li>
             <li>使用bootstrap5.2的RWD技術</li>
-        </ol>
+        </ul>
         <img src="imgs/main.jpg" alt="">
         <li>會員中心</li>
-        <ol>
+        <ul>
             <li>使用ajax串接API取得單一會員資訊</li>
             <li>使用sweetalert串接API修改會員資料並在修改後加上setTimeout延遲幾秒後再跳回原頁面</li>
-        </ol>
+        </ul>
         <img src="imgs/member_center.jpg" alt="">
         <li>餐飲地圖及口罩地圖</li>
-        <ol>
+        <ul>
             <li>使用ajax串接餐飲和口罩資料以及台灣各縣市鄉鎮的API</li>
             <li>使用leftlet完成地圖大致樣貌</li>
             <li>使用MarkerClusterGroup群聚個不同大小的範圍</li>
             <li>使用HTML5 Geolocation API取得目前所在位置並定位</li>
-        </ol>
+        </ul>
         <img src="imgs/restaurantmap.jpg" alt="">
         <li>後台管理-數據分析</li>
         <ul>
